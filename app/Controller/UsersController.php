@@ -2,9 +2,6 @@
 
 class UsersController extends AppController {
 
-	public $hepers = array('Html', 'Form', 'Session');
-	public $components = array('Session');
-
 	public function register() {
 
 		if(!empty($this->params['form'])) {

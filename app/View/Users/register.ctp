@@ -1,3 +1,5 @@
+<!-- File Location: app/View/Users/register.ctp -->
+
 <h2>User Registration</h2>
 <?php
 	echo $this->Form->create('Registration', array('action' => 'register'));
