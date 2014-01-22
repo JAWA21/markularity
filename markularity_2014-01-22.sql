@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.29)
 # Database: markularity
-# Generation Time: 2014-01-22 18:52:55 +0000
+# Generation Time: 2014-01-22 19:14:36 +0000
 # ************************************************************
 
 
@@ -45,12 +45,18 @@ CREATE TABLE `bookmarks` (
 DROP TABLE IF EXISTS `points`;
 
 CREATE TABLE `points` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `book_id` int(11) DEFAULT NULL,
-  `pointType_id` int(11) DEFAULT NULL,
+  `point_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `book_id` int(11) unsigned DEFAULT NULL,
+  `pointType_id` int(11) unsigned DEFAULT NULL,
   `dateTime` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`point_id`),
+  KEY `user_id` (`user_id`),
+  KEY `pointType_id` (`pointType_id`),
+  KEY `book_id` (`book_id`),
+  CONSTRAINT `points_ibfk_3` FOREIGN KEY (`book_id`) REFERENCES `bookmarks` (`bookmark_id`),
+  CONSTRAINT `points_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `points_ibfk_2` FOREIGN KEY (`pointType_id`) REFERENCES `pointTypes` (`type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -61,17 +67,17 @@ CREATE TABLE `points` (
 DROP TABLE IF EXISTS `pointTypes`;
 
 CREATE TABLE `pointTypes` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `type_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `click` int(11) DEFAULT NULL,
   `up` int(11) DEFAULT NULL,
   `down` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `pointTypes` WRITE;
 /*!40000 ALTER TABLE `pointTypes` DISABLE KEYS */;
 
-INSERT INTO `pointTypes` (`id`, `click`, `up`, `down`)
+INSERT INTO `pointTypes` (`type_id`, `click`, `up`, `down`)
 VALUES
 	(1,1,5,3);
 
@@ -86,7 +92,6 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(32) DEFAULT NULL,
   `firstname` varchar(25) DEFAULT NULL,
