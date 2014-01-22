@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.33)
+# Host: 127.0.0.1 (MySQL 5.5.29)
 # Database: markularity
-# Generation Time: 2014-01-20 16:02:10 +0000
+# Generation Time: 2014-01-22 18:52:55 +0000
 # ************************************************************
 
 
@@ -39,6 +39,46 @@ CREATE TABLE `bookmarks` (
 
 
 
+# Dump of table points
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `points`;
+
+CREATE TABLE `points` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `pointType_id` int(11) DEFAULT NULL,
+  `dateTime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table pointTypes
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pointTypes`;
+
+CREATE TABLE `pointTypes` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `click` int(11) DEFAULT NULL,
+  `up` int(11) DEFAULT NULL,
+  `down` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `pointTypes` WRITE;
+/*!40000 ALTER TABLE `pointTypes` DISABLE KEYS */;
+
+INSERT INTO `pointTypes` (`id`, `click`, `up`, `down`)
+VALUES
+	(1,1,5,3);
+
+/*!40000 ALTER TABLE `pointTypes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 # Dump of table users
 # ------------------------------------------------------------
 
@@ -46,6 +86,7 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(32) DEFAULT NULL,
   `firstname` varchar(25) DEFAULT NULL,
