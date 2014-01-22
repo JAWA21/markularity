@@ -2,7 +2,7 @@
 
 <h2>User Registration</h2>
 <?php
-	echo $this->Form->create('Registration', array('action' => 'register'));
+	echo $this->Form->create('Users', array('action' => 'register'));
 	echo $this->Form->input('first_name', array('label' => 'First Name', 'id' => 'first_name'));
 	echo $this->Form->input('last_name', array('label' => 'Last Name', 'id' => 'last_name'));
 	echo $this->Form->input('email', array('label' => 'Email Address', 'id' => 'email'));

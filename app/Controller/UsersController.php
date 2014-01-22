@@ -4,9 +4,9 @@ class UsersController extends AppController {
 
 	public function register() {
 
-		if(!empty($this->params['form'])) {
+		if(!empty($this->request->data['Users'])) {
 
-			if($this->User->save($this->params('form'))) {
+			if($this->User->save($this->request->data['Users'])) {
 
 				$this->Session->setFlash(__('Registration Successful!'));
 				return $this->redirect(array('action' => 'login'));
@@ -18,6 +18,8 @@ class UsersController extends AppController {
 
 			}
 
+		}else{
+			echo "testing";
 		}
 
 	}
