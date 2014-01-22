@@ -135,6 +135,7 @@ Request URL: /registrations/register
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+<<<<<<< HEAD
 >>>>>>> 401e19bffbb14c4c69893c3ac2792d2e9fe45116
 2014-01-22 21:25:58 Error: [MissingControllerException] Controller class RegistrationsController could not be found.
 Exception Attributes: array (
@@ -146,10 +147,25 @@ Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2014-01-22 21:27:02 Error: [MissingControllerException] Controller class UserController could not be found.
+=======
+2014-01-22 21:39:03 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-22 21:39:25 Error: [MissingControllerException] Controller class UserController could not be found.
+>>>>>>> a788c0c2fbc9442a4d0d253edbfa9ebdf63eee43
 Exception Attributes: array (
   'class' => 'UserController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /user/register
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -180,8 +196,74 @@ Exception Attributes: array (
   'action' => 'login',
 )
 Request URL: /users/login
+=======
+Request URL: /user
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-22 21:39:32 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /users
+>>>>>>> a788c0c2fbc9442a4d0d253edbfa9ebdf63eee43
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
 #1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+<<<<<<< HEAD
+=======
+2014-01-22 21:41:44 Error: [MissingControllerException] Controller class Index.cfmController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.cfmController',
+  'plugin' => NULL,
+)
+Request URL: /index.cfm/users/new
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-22 21:41:47 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /index
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-22 21:43:25 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /index
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-22 21:45:45 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /index
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-22 21:45:48 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Pages/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Pages/index.ctp',
+)
+Request URL: /
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName('index')
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render('index', NULL)
+#2 /Applications/MAMP/htdocs/markularity/app/Controller/PagesController.php(69): Controller->render('index')
+#3 [internal function]: PagesController->display('index')
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+>>>>>>> a788c0c2fbc9442a4d0d253edbfa9ebdf63eee43
