@@ -41,6 +41,7 @@ class UsersController extends AppController {
 
         		if ($this->request->is('post')) {
 
+<<<<<<< HEAD
 					$user = array(
 						'username' => $this->request->data['username'],
 						'password' =>  $this->request->data['password'],
@@ -57,6 +58,27 @@ class UsersController extends AppController {
 
         			}
         			$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
+=======
+        			$user = array(
+				'username' => $this->request->data['User']['username'],
+				'password' =>  $this->request->data['User']['password'],
+				'firstname' => $this->request->data['User']['firstname'],
+				'lastname' => $this->request->data['User']['lastname'],
+				'role' => 'author'
+			);
+
+        			$createdSuccess = $this->User->save(array(
+        				'User' => $user
+    			));
+
+            			if (!$createdSuccess) {
+            				$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
+            				return;
+            			}
+
+            			$this->Session->setFlash(__('Registration Successful!'));
+            			$this->Auth->login();	
+>>>>>>> e94acf0d568c455613bb61cc1026368f7c8bd576
 
         		}
 
@@ -70,7 +92,7 @@ class UsersController extends AppController {
 
 			$user = array(
 				//'user_id' => //get this from the session,
-				'username' => $this->request->data['email'],
+				'username' => $this->request->data['username'],
 				'firstname' => $this->request->data['firstname'],
 				'lastname' => $this->request->data['lastname']
 			);
@@ -125,8 +147,10 @@ class UsersController extends AppController {
 
 		$this->Auth->authenticate = array(
 			'Form' => array(
-			'fields' => array('username' => 'email', 'password' =>'password')
-			)
+
+			'fields' => array('username' => 'username', 'password' =>'password')
+   			)
+
 		);
 
 		if($this->Auth->login($this->request->data('Users'))) {
