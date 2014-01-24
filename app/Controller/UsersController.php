@@ -31,40 +31,20 @@ class UsersController extends AppController {
 
 	public function register() {
 
-		if(!empty($this->request->data['Users'])) {
+        		if ($this->request->is('post')) {
 
-			if($this->User->save($this->request->data['Users'])) {
+            			$this->User->create();
+            			if ($this->User->save($this->request->data)) {
 
-				$this->Session->setFlash(__('Registration Successful!'));
-				return $this->redirect(array('action' => 'login'));
+                			$this->Session->setFlash(__('Registration Successful!'));
+                			return $this->redirect(array('action' => 'login'));
 
-			}else {
+            			}
+            			$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
 
-				$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
-				return $this->redirect(array('action' => 'register'));
+        		}
 
-			}
-
-		}
-
-	}
-
-	// public function add() {
-
- //        		if ($this->request->is('post')) {
-
- //            			$this->User->create();
- //            			if ($this->User->save($this->request->data)) {
-
- //                			$this->Session->setFlash(__('The user has been saved'));
- //                			return $this->redirect(array('action' => 'index'));
-
- //            			}
- //            			$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-
- //        		}
-
- //    	}
+    	}
 
 	public function edit($id = null) {
 
@@ -114,7 +94,7 @@ class UsersController extends AppController {
 
 		}else {
 
-			$this->Session->setFlash(__('Th user was not deleted'));
+			$this->Session->setFlash(__('The user was not deleted'));
 			return $this->redirect(array('action' => 'index'));
 
 		}
@@ -127,6 +107,7 @@ class UsersController extends AppController {
 
 			if($this->Auth->login()) {
 
+				echo "logged in";
 				return $this->redirect($this->Auth->redirect());
 
 			}
