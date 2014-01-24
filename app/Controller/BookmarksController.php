@@ -22,11 +22,15 @@ class BookmarksController extends AppController {
  * @return void
  */
 	public function index() {
+
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
-					'order' => array('rank' => 'desc'),
-					'limit' => 10,
-					//where flag = false
-				))	
+			'conditions' => array(
+				'flag' => false
+			),
+			'order' => array('rank' => 'desc'),
+			'limit' => 10,
+			//where flag = false
+			))
 		);
 	}//end index
 
@@ -34,15 +38,13 @@ class BookmarksController extends AppController {
  * view method
  *
  * @throws NotFoundException
- * @param string $id
+ * Allows a user to view their posts
+ * @param string $user_id
  * @return void
  */
-	public function view($id = null) {
-		if (!$this->Bookmark->exists($id)) {
-			throw new NotFoundException(__('Invalid bookmark'));
-		}
-		$options = array('conditions' => array('Bookmark.' . $this->Bookmark->primaryKey => $id));
-		$this->set('bookmark', $this->Bookmark->find('first', $options));
+	//would I still need the user Id to get their stuff
+	public function view($user_id = null) {
+		
 	}
 
 /**
@@ -79,7 +81,7 @@ class BookmarksController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($bookmark_id = null) {
 
 		if (!$this->Bookmark->exists($id)) {
 

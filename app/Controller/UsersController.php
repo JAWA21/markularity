@@ -42,10 +42,10 @@ class UsersController extends AppController {
         		if ($this->request->is('post')) {
 
         			$user = array(
-				'username' => $this->request->data['username'],
+				'username' => $this->request->data['email'],
 				'password' =>  $this->request->data['password'],
-				'first_name' => $this->request->data['first_name'],
-				'last_name' => $this->request->data['last_name'],
+				'firstname' => $this->request->data['firstname'],
+				'lastname' => $this->request->data['lastname'],
 				'role' => 'author'
 			);
 
@@ -70,9 +70,9 @@ class UsersController extends AppController {
 
 			$user = array(
 				//'user_id' => //get this from the session,
-				'username' => $this->request->data['username'],
-				'first_name' => $this->request->data['first_name'],
-				'last_name' => $this->request->data['last_name']
+				'username' => $this->request->data['email'],
+				'firstname' => $this->request->data['firstname'],
+				'lastname' => $this->request->data['lastname']
 			);
 
 			$createdSuccess = $this->User->save($user );
@@ -121,25 +121,20 @@ class UsersController extends AppController {
 
 	}
 
-	public function login() {
-<<<<<<< HEAD
-		
+	public function login() {		
 		if($this->request->is('post')) {
-=======
->>>>>>> 401950f00e22a48143cb7b77ae044d7844c01237
-
 		$this->Auth->authenticate = array(
 			'Form' => array(
-			'fields' => array('username' => 'username', 'password' =>'password')
+			'fields' => array('username' => 'email', 'password' =>'password')
+<<<<<<< HEAD
     			)
         		);
 
-<<<<<<< HEAD
-				echo "logged in";
-				return $this->redirect($this->Auth->redirectUrl());
-=======
->>>>>>> 401950f00e22a48143cb7b77ae044d7844c01237
 
+=======
+			)
+		);
+>>>>>>> 0c9089e4154a93ab6045c012fbff0762e7212661
 		if($this->Auth->login($this->request->data('Users'))) {
 
 		        	return $this->redirect($this->Auth->redirect());
