@@ -267,3 +267,83 @@ Stack Trace:
 #7 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
 >>>>>>> a788c0c2fbc9442a4d0d253edbfa9ebdf63eee43
+2014-01-24 11:42:45 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 100]
+2014-01-24 11:42:45 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 100)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 100, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 100, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:43:07 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:43:07 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:43:31 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:43:31 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:43:33 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:43:33 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:43:34 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:43:34 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:43:34 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:43:34 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:46:38 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:46:38 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 11:52:16 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 8]
+2014-01-24 11:52:16 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 8, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
