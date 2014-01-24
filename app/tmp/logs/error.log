@@ -791,3 +791,172 @@ Request URL: /admin/edit
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-01-24 17:39:58 Error: [MissingControllerException] Controller class EditController could not be found.
+Exception Attributes: array (
+  'class' => 'EditController',
+  'plugin' => NULL,
+)
+Request URL: /admin/edit
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:39:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:40:03 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /admin
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:40:11 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /users/admin
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:40:37 Error: [MissingActionException] Action UsersController::admin_dashboard() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_dashboard',
+)
+Request URL: /admin/users/dashboard
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:40:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:41:00 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /users/admin/dashboard
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:41:11 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:41:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:41:38 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:41:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:42:23 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:42:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:42:46 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:42:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:43:35 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /admin/users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:43:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/admin.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

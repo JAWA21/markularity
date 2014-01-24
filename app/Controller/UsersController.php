@@ -102,7 +102,7 @@ class UsersController extends AppController {
 	}
 
 	public function login() {
-
+		$this->Auth->allow('*');
 		if($this->request->is('post')) {
 
 			if($this->Auth->login()) {
@@ -116,6 +116,12 @@ class UsersController extends AppController {
 		}
 
 	}
+
+	public function admin_dashboard() {
+
+        $title_for_layout = 'Dashbord';
+        $this->set(compact('title_for_layout'));
+    }
 
 	public function logout() {
 
