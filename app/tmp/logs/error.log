@@ -470,3 +470,32 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-01-24 13:53:57 Error: [NotFoundException] Invalid bookmark
+Request URL: /bookmarks/view
+Stack Trace:
+#0 [internal function]: BookmarksController->view()
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BookmarksController), Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(BookmarksController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 15:05:39 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/markularity/app/Controller/UsersController.php, line 131]
+2014-01-24 15:05:39 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 131)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 131, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 131, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:18:47 Error: Fatal Error (4): syntax error, unexpected ')' in [/Applications/MAMP/htdocs/markularity/app/View/Layouts/default.ctp, line 55]
+2014-01-24 15:18:47 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 55, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 55, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -114,7 +114,7 @@ class UsersController extends AppController {
 
 		}else {
 
-			$this->Session->setFlash(__('Th user was not deleted'));
+			$this->Session->setFlash(__('The user was not deleted'));
 			return $this->redirect(array('action' => 'index'));
 
 		}
@@ -127,7 +127,8 @@ class UsersController extends AppController {
 
 			if($this->Auth->login()) {
 
-				return $this->redirect($this->Auth->redirect());
+				echo "logged in";
+				return $this->redirect($this->Auth->redirect(array('action' => 'bookmarks')));
 
 			}
 			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
