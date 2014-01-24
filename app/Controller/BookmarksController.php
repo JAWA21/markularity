@@ -14,17 +14,21 @@ class BookmarksController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+	public $components = array('Session');
 
 /**
  * index method
- *
+ *	displays top 10 bookmarks
  * @return void
  */
 	public function index() {
-		$this->Bookmark->recursive = 0;
-		$this->set('bookmarks', $this->Paginator->paginate());
-	}
+		$this->set('bookmarks', $this->Bookmark->find('all', array(
+					'order' => array('rank' => 'desc'),
+					'limit' => 10,
+					//where flag = false
+				))	
+		);
+	}//end index
 
 /**
  * view method
