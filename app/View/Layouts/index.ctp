@@ -19,16 +19,22 @@ $title_for_layout = "Markularity";
 
 ?>
 <!DOCTYPE html>
+<?
+$title_for_layout = "Markularity";
+?>
+
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
+		<?php 
+			echo $title_for_layout;
+			echo $this->Html->script('bootstrap.js');?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('bootstrap.css');
-		echo $this->Html->script('jquery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -64,6 +70,7 @@ $title_for_layout = "Markularity";
 	</div>
 <?echo $this->Js->writeBuffer();?>
 <?php echo $this->Session->flash(); ?>
+    <script src="https://code.jquery.com/jquery.js"></script>
 </body>
 </html>
 

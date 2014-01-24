@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
-class BookmarksController extends AppController {
+class BookmarksController extends Controller {
 
 /**
  * Components
@@ -25,11 +25,10 @@ class BookmarksController extends AppController {
 
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
-				'flag' => false
+				'flag' => false,
 			),
 			'order' => array('rank' => 'desc'),
 			'limit' => 10,
-			//where flag = false
 			))
 		);
 	}//end index
@@ -44,7 +43,14 @@ class BookmarksController extends AppController {
  */
 	//would I still need the user Id to get their stuff
 	public function view($user_id = null) {
-		
+		$this->set('bookmarks', $this->Bookmark->find('all', array(
+			'conditions' => array(
+				'flag' => false,
+			),
+			'order' => array('rank' => 'desc'),
+			'limit' => 10,
+			))
+		);
 	}
 
 /**
