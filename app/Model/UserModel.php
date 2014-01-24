@@ -41,6 +41,11 @@ class User extends AppModel {
 				'rule' => array('notEmpty'),
 				'message' => 'Password is required.'
 			)
+		),
+		'role' => array(
+			'valid' => array(
+				'rule' => array('inlist', array('admin', 'author'))
+			)
 		)
 	);
 

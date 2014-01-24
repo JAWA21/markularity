@@ -7,5 +7,6 @@
 	echo $this->Form->input('last_name', array('label' => 'Last Name', 'id' => 'last_name'));
 	echo $this->Form->input('email', array('label' => 'Email Address', 'id' => 'email'));
 	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password'));
+	echo $this->Form->hidden('role', array('id' => 'role', 'value' => 'author'));
 	echo $this->Form->end('Register');
 ?>
