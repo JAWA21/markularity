@@ -47,7 +47,9 @@ class AppController extends Controller {
 				'home'
 			),
 			'authorize' => array('Controller'),
-			'fields' => array('username' => 'email', 'password' => 'password')
+
+			'fields' => array('username' => 'username', 'password' => 'password')
+
 		)
 	);
 
@@ -64,9 +66,11 @@ class AppController extends Controller {
 		}
 
 	}
+
 	//Do not require user to login for all index and view actions in every controller
 	public function beforeFilter() {
 		
+
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
 		$this->layout = 'admin';
 		$this->Auth->allow('index', 'view');

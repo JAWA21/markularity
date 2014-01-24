@@ -42,21 +42,24 @@ class UsersController extends AppController {
         		if ($this->request->is('post')) {
 
         			$user = array(
-				'username' => $this->request->data['email'],
-				'password' =>  $this->request->data['password'],
-				'firstname' => $this->request->data['firstname'],
-				'lastname' => $this->request->data['lastname'],
+				'username' => $this->request->data['User']['username'],
+				'password' =>  $this->request->data['User']['password'],
+				'firstname' => $this->request->data['User']['firstname'],
+				'lastname' => $this->request->data['User']['lastname'],
 				'role' => 'author'
 			);
 
-            			$this->User->create();
-            			if ($this->User->save($this->request->data)) {
+        			$createdSuccess = $this->User->save(array(
+        				'User' => $user
+    			));
 
-                			$this->Session->setFlash(__('Registration Successful!'));
-                			return $this->redirect(array('action' => 'login'));
-
+            			if (!$createdSuccess) {
+            				$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
+            				return;
             			}
-            			$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
+
+            			$this->Session->setFlash(__('Registration Successful!'));
+            			$this->Auth->login();	
 
         		}
 
@@ -70,7 +73,7 @@ class UsersController extends AppController {
 
 			$user = array(
 				//'user_id' => //get this from the session,
-				'username' => $this->request->data['email'],
+				'username' => $this->request->data['username'],
 				'firstname' => $this->request->data['firstname'],
 				'lastname' => $this->request->data['lastname']
 			);
@@ -121,13 +124,16 @@ class UsersController extends AppController {
 
 	}
 
-	public function login() {		
+	public function login(){
 
 		$this->Auth->authenticate = array(
 			'Form' => array(
-			'fields' => array('username' => 'email', 'password' =>'password')
+
+			'fields' => array('username' => 'username', 'password' =>'password')
    			)
+
 		);
+
 		if($this->Auth->login($this->request->data('Users'))) {
 
 		        	return $this->redirect($this->Auth->redirect());
