@@ -45,7 +45,8 @@ class AppController extends Controller {
 				'action' => 'display',
 				'home'
 			),
-			'authorize' => array('Controller')
+			'authorize' => array('Controller'),
+
 		)
 	);
 
@@ -63,10 +64,11 @@ class AppController extends Controller {
 
 	}
 
+
 	public function beforeFilter() {
 
-		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
-		$this->layout = 'admin';
+		//if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
+		//$this->layout = 'admin';
 		$this->Auth->allow('index', 'view');
 
 	}

@@ -102,13 +102,13 @@ class UsersController extends AppController {
 	}
 
 	public function login() {
-		$this->Auth->allow('*');
+		
 		if($this->request->is('post')) {
 
 			if($this->Auth->login()) {
 
 				echo "logged in";
-				return $this->redirect($this->Auth->redirect());
+				return $this->redirect($this->Auth->redirectUrl());
 
 			}
 			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
