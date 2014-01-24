@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.29)
+# Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: markularity
-# Generation Time: 2014-01-24 16:34:12 +0000
+# Generation Time: 2014-01-24 21:28:43 +0000
 # ************************************************************
 
 
@@ -108,6 +108,21 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table point_type
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `point_type`;
+
+CREATE TABLE `point_type` (
+  `type_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `clickthrough` int(11) DEFAULT NULL,
+  `like` int(11) DEFAULT NULL,
+  `dislike` int(11) DEFAULT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 # Dump of table points
 # ------------------------------------------------------------
 
@@ -161,22 +176,36 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(32) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   `firstname` varchar(25) DEFAULT NULL,
   `lastname` varchar(25) DEFAULT NULL,
+  `role` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
-INSERT INTO `users` (`user_id`, `email`, `password`, `firstname`, `lastname`)
+INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`, `role`)
 VALUES
-	(1,'me@email.com','1234','Bugs','Bunny'),
-	(2,'me@email.com','1234','Tweety','Bird'),
-	(3,'me@email.com','1234','Road','Runner'),
-	(4,'fasterThanRoadRunner@speed.com','1234','Wiley','Coyote');
+	(1,'me@email.com','1234','Bugs','Bunny',NULL),
+	(2,'me@email.com','1234','Tweety','Bird',NULL),
+	(3,'me@email.com','1234','Road','Runner',NULL),
+	(4,'fasterThanRoadRunner@speed.com','1234','Wiley','Coyote',NULL),
+	(5,NULL,'34b3601464be5bfe78adcd6fc6caae4f',NULL,NULL,NULL),
+	(6,NULL,'34b3601464be5bfe78adcd6fc6caae4f',NULL,NULL,NULL),
+	(7,'me@me.com','34b3601464be5bfe78adcd6fc6caae4f6b075400',NULL,NULL,'author'),
+	(8,'me@me.com','34b3601464be5bfe78adcd6fc6caae4f6b075400',NULL,NULL,'author'),
+	(9,'test@test.com','4a72bf452145fc53aafd98f3f39e1f74098632f0',NULL,NULL,'author'),
+	(10,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(11,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(12,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(13,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(14,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(15,'adsfasdf@sdfasd.coasdfsd','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(16,'adsfasdf','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
+	(17,'adsfasdf','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

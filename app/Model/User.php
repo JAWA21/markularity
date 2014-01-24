@@ -25,13 +25,13 @@ class User extends AppModel {
 
 	//Basic registration validation
 	public $validate = array(
-		'first_name' => array(
+		'firstname' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
 				'message' => 'First name is required.'
 			)
 		),
-		'last_name' => array(
+		'lastname' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
 				'message' => 'Last name is required.'
