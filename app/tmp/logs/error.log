@@ -525,3 +525,115 @@ Stack Trace:
 #13 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
 >>>>>>> 563556856a9640ac7327d7d8362c3f4103aa016e
+2014-01-24 15:48:59 Error: Fatal Error (4): syntax error, unexpected '$name' (T_VARIABLE), expecting function (T_FUNCTION) in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 6]
+2014-01-24 15:48:59 Error: [FatalErrorException] syntax error, unexpected '$name' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 6, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 6, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:49:27 Error: Fatal Error (4): syntax error, unexpected '{' in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 10]
+2014-01-24 15:49:27 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:49:46 Error: Fatal Error (4): syntax error, unexpected '{' in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 10]
+2014-01-24 15:49:46 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:55:50 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 15:58:13 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 16:13:23 Error: [UnauthorizedException] Unauthorized
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(346): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(302): AuthComponent->_unauthenticated(Object(UsersController))
+#2 [internal function]: AuthComponent->startup(Object(UsersController))
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-01-24 16:13:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('first', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(112): Model->find('first', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BasicAuthenticate.php(84): BaseAuthenticate->_findUser('pew@pew.com', 'pew')
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(676): BasicAuthenticate->getUser(Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(301): AuthComponent->_getUser()
+#10 [internal function]: AuthComponent->startup(Object(UsersController))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#12 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#15 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#16 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#17 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-01-24 16:14:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('first', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(112): Model->find('first', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BasicAuthenticate.php(84): BaseAuthenticate->_findUser('pew@pew.com', 'pew')
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(676): BasicAuthenticate->getUser(Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(301): AuthComponent->_getUser()
+#10 [internal function]: AuthComponent->startup(Object(UsersController))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#12 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#15 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#16 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#17 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
