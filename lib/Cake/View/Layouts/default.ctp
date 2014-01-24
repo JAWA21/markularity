@@ -56,6 +56,6 @@ $this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' =
   );
   ?>
 </div>
-<? echo 'layouts/default.ctp' ?>
+
 </body>
 </html>
