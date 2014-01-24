@@ -1,0 +1,34 @@
+2014-01-24 21:43:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'rank' in 'order clause'
+Request URL: /bookmarks
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Bookmar...', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Bookmar...', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Bookmar...', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(Bookmark), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/markularity/app/Controller/BookmarksController.php(29): Model->find('all', Array)
+#7 [internal function]: BookmarksController->index()
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BookmarksController), Array)
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(BookmarksController), Object(CakeRequest), Object(CakeResponse))
+#11 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-01-24 21:47:28 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/thumbsup.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 21:47:28 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/thumbsdown.png
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
