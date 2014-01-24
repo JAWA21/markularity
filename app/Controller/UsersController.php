@@ -117,6 +117,7 @@ class UsersController extends AppController {
     			)
         		);
 
+
 		if($this->Auth->login($this->request->data('Users'))) {
 
 		        	return $this->redirect($this->Auth->redirect());
@@ -126,6 +127,12 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
 
 	}
+
+	public function admin_dashboard() {
+
+        $title_for_layout = 'Dashbord';
+        $this->set(compact('title_for_layout'));
+    }
 
 	public function logout() {
 
