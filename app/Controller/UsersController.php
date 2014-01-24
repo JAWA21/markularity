@@ -42,10 +42,10 @@ class UsersController extends AppController {
         		if ($this->request->is('post')) {
 
         			$user = array(
-				'username' => $this->request->data['username'],
+				'username' => $this->request->data['email'],
 				'password' =>  $this->request->data['password'],
-				'first_name' => $this->request->data['first_name'],
-				'last_name' => $this->request->data['last_name'],
+				'firstname' => $this->request->data['firstname'],
+				'lastname' => $this->request->data['lastname'],
 				'role' => 'author'
 			);
 
@@ -70,9 +70,9 @@ class UsersController extends AppController {
 
 			$user = array(
 				//'user_id' => //get this from the session,
-				'username' => $this->request->data['username'],
-				'first_name' => $this->request->data['first_name'],
-				'last_name' => $this->request->data['last_name']
+				'username' => $this->request->data['email'],
+				'firstname' => $this->request->data['firstname'],
+				'lastname' => $this->request->data['lastname']
 			);
 
 			$createdSuccess = $this->User->save($user );
@@ -128,7 +128,6 @@ class UsersController extends AppController {
 			'fields' => array('username' => 'email', 'password' =>'password')
 			)
 		);
-
 
 		if($this->Auth->login($this->request->data('Users'))) {
 
