@@ -370,3 +370,26 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-01-24 14:54:48 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/Applications/MAMP/tmp/mysql/mysql.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /bookmarks
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(3474): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(3496): Model->setSource('bookmarks')
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('all', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#8 /Applications/MAMP/htdocs/markularity/app/Controller/BookmarksController.php(26): PaginatorComponent->paginate()
+#9 [internal function]: BookmarksController->index()
+#10 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BookmarksController), Array)
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(BookmarksController), Object(CakeRequest), Object(CakeResponse))
+#13 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
