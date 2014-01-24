@@ -41,6 +41,14 @@ class UsersController extends AppController {
 
         		if ($this->request->is('post')) {
 
+        			$user = array(
+				'username' => $this->request->data['username'],
+				'password' =>  $this->request->data['password'],
+				'first_name' => $this->request->data['first_name'],
+				'last_name' => $this->request->data['last_name'],
+				'role' => 'author'
+			);
+
             			$this->User->create();
             			if ($this->User->save($this->request->data)) {
 
@@ -54,18 +62,22 @@ class UsersController extends AppController {
 
     	}
 
-	public function edit($id = null) {
+	public function edit() {
 
-		$this->User->id = $id;
-		if(!$this->User->exists()) {
-
-			throw new NotFoundException(__('Invalid user'));
-
-		}
+		// validate they are logged in
 
 		if($this->request->is('post') || $this->request->is('put')) {
 
-			if($this->User->save($this->request->data)) {
+			$user = array(
+				//'user_id' => //get this from the session,
+				'username' => $this->request->data['username'],
+				'first_name' => $this->request->data['first_name'],
+				'last_name' => $this->request->data['last_name']
+			);
+
+			$createdSuccess = $this->User->save($user );
+
+			if($createdSuccess) {
 
 				$this->Session->setFlash(__('The user has been saved'));
 				return $this->redirect(array('action' => 'index'));
