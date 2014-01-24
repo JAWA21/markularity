@@ -62,7 +62,6 @@ $title_for_layout = "Markularity";
 		</div><!-- End #container -->
 	</body>
 
- <?php echo $this->fetch('content'); ?>
 </div>
 <div id="footer">
 <?php echo $this->Html->link(

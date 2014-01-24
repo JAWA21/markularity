@@ -29,7 +29,7 @@ App::uses('AuthComponent', 'Component');
  * will inherit them.
  *
  * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller 
  */
 class AppController extends Controller {
 	public $helpers = array('Html', 'Form', 'Session');
@@ -64,10 +64,9 @@ class AppController extends Controller {
 		}
 
 	}
-
 	//Do not require user to login for all index and view actions in every controller
 	public function beforeFilter() {
-
+		
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
 		$this->layout = 'admin';
 		$this->Auth->allow('index', 'view');

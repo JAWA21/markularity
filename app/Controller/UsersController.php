@@ -121,15 +121,20 @@ class UsersController extends AppController {
 
 	}
 
-	public function login() {
-
+	public function login() {		
+		if($this->request->is('post')) {
 		$this->Auth->authenticate = array(
 			'Form' => array(
 			'fields' => array('username' => 'email', 'password' =>'password')
+<<<<<<< HEAD
     			)
         		);
 
 
+=======
+			)
+		);
+>>>>>>> 0c9089e4154a93ab6045c012fbff0762e7212661
 		if($this->Auth->login($this->request->data('Users'))) {
 
 		        	return $this->redirect($this->Auth->redirect());
