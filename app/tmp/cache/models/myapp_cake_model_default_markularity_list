@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+1390561677
+a:4:{i:0;s:9:"bookmarks";i:1;s:10:"point_type";i:2;s:6:"points";i:3;s:5:"users";}
+=======
 1390424049
 a:4:{i:0;s:9:"bookmarks";i:1;s:10:"pointTypes";i:2;s:6:"points";i:3;s:5:"users";}
+>>>>>>> ce6ad5a983f1b4b5eb4631a9805034c32630698f
