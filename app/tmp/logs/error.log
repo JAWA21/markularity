@@ -524,7 +524,33 @@ Stack Trace:
 #12 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(BookmarksController), Object(CakeRequest), Object(CakeResponse))
 #13 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
+<<<<<<< HEAD
+2014-01-24 15:10:37 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/Applications/MAMP/tmp/mysql/mysql.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /bookmarks
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(3474): ConnectionManager::getDataSource('default')
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(1126): Model->setDataSource('default')
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(3496): Model->setSource('bookmarks')
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): Model->getDataSource()
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('all', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#8 /Applications/MAMP/htdocs/markularity/app/Controller/BookmarksController.php(26): PaginatorComponent->paginate()
+#9 [internal function]: BookmarksController->index()
+#10 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(BookmarksController), Array)
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(BookmarksController), Object(CakeRequest), Object(CakeResponse))
+#13 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+=======
 >>>>>>> 563556856a9640ac7327d7d8362c3f4103aa016e
+<<<<<<< HEAD
 2014-01-24 15:38:39 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION) in [/Applications/MAMP/htdocs/markularity/app/Controller/IndexController.php, line 4]
 2014-01-24 15:38:39 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION)
 Request URL: /
@@ -775,6 +801,11 @@ Stack Trace:
 2014-01-24 16:38:23 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Applications/MAMP/htdocs/markularity/app/Controller/IndexController.php, line 6]
 2014-01-24 16:38:23 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
 Request URL: /
+=======
+2014-01-24 15:48:59 Error: Fatal Error (4): syntax error, unexpected '$name' (T_VARIABLE), expecting function (T_FUNCTION) in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 6]
+2014-01-24 15:48:59 Error: [FatalErrorException] syntax error, unexpected '$name' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /users/register
+>>>>>>> d830f1f10f252c0797c5ae2761eafd0a86cc2a38
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 6)
 #1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 6, Array)
@@ -782,6 +813,7 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+<<<<<<< HEAD
 2014-01-24 16:38:45 Error: Fatal Error (64): Cannot redeclare IndexController::$helpers in [/Applications/MAMP/htdocs/markularity/app/Controller/IndexController.php, line 4]
 2014-01-24 16:38:45 Error: [FatalErrorException] Cannot redeclare IndexController::$helpers
 Request URL: /
@@ -1355,6 +1387,236 @@ Exception Attributes: array (
   'plugin' => NULL,
 )
 Request URL: /js/jquery.js
+=======
+2014-01-24 15:49:27 Error: Fatal Error (4): syntax error, unexpected '{' in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 10]
+2014-01-24 15:49:27 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:49:46 Error: Fatal Error (4): syntax error, unexpected '{' in [/Applications/MAMP/htdocs/markularity/app/Model/User.php, line 10]
+2014-01-24 15:49:46 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 10, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-01-24 15:55:50 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 15:58:13 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 16:13:23 Error: [UnauthorizedException] Unauthorized
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(346): BasicAuthenticate->unauthenticated(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(302): AuthComponent->_unauthenticated(Object(UsersController))
+#2 [internal function]: AuthComponent->startup(Object(UsersController))
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-01-24 16:13:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('first', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(112): Model->find('first', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BasicAuthenticate.php(84): BaseAuthenticate->_findUser('pew@pew.com', 'pew')
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(676): BasicAuthenticate->getUser(Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(301): AuthComponent->_getUser()
+#10 [internal function]: AuthComponent->startup(Object(UsersController))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#12 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#15 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#16 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#17 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-01-24 16:14:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+Request URL: /users/login
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(User), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('first', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(112): Model->find('first', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/Auth/BasicAuthenticate.php(84): BaseAuthenticate->_findUser('pew@pew.com', 'pew')
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(676): BasicAuthenticate->getUser(Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/AuthComponent.php(301): AuthComponent->_getUser()
+#10 [internal function]: AuthComponent->startup(Object(UsersController))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#12 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#15 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#16 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#17 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+>>>>>>> 692c6ec2aba52a57196f7997e0f7f6250fc77bcb
+2014-01-24 17:03:13 Error: [MissingControllerException] Controller class MarkularityController could not be found.
+Exception Attributes: array (
+  'class' => 'MarkularityController',
+  'plugin' => NULL,
+)
+Request URL: /markularity/users/register
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:03:25 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/markularity/app/View/Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-01-24 17:14:17 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /admin
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:14:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Admin.id' in 'field list'
+Request URL: /admins
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Admin`....', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Admin`....', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Admin`....', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(Admin), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(1079): PaginatorComponent->paginate(NULL, Array, Array)
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(190): Controller->paginate()
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(384): Scaffold->_scaffoldIndex(Object(CakeRequest))
+#10 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(151): Scaffold->_scaffold(Object(CakeRequest))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(535): Scaffold->__construct(Object(AdminsController), Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#15 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-01-24 17:15:10 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Admin.id' in 'field list'
+Request URL: /admins
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Admin`....', Array)
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Admin`....', Array, Array)
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Admin`....', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2900): DboSource->read(Object(Admin), Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(2872): Model->_readDataSource('all', Array)
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(1079): PaginatorComponent->paginate(NULL, Array, Array)
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(190): Controller->paginate()
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(384): Scaffold->_scaffoldIndex(Object(CakeRequest))
+#10 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(151): Scaffold->_scaffold(Object(CakeRequest))
+#11 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(535): Scaffold->__construct(Object(AdminsController), Object(CakeRequest))
+#12 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#13 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#15 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-01-24 17:18:10 Error: [MissingTableException] Table admins for model Admin was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'admins',
+  'class' => 'Admin',
+  'ds' => 'default',
+)
+Request URL: /admins
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(3496): Model->setSource('admins')
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#2 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(1447): Model->schema()
+#3 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(1434): Model->hasField('title', false)
+#4 /Applications/MAMP/htdocs/markularity/lib/Cake/Model/Model.php(880): Model->hasField(Array)
+#5 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Scaffold.php(131): Model->__get('displayField')
+#6 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(535): Scaffold->__construct(Object(AdminsController), Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/markularity/lib/Cake/Controller/Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#8 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#9 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#10 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-01-24 17:21:29 Error: [MissingControllerException] Controller class ControllerController could not be found.
+Exception Attributes: array (
+  'class' => 'ControllerController',
+  'plugin' => NULL,
+)
+Request URL: /admin/controller/index
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:22:14 Error: [MissingActionException] Action IndexController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'IndexController',
+  'action' => 'admin_index',
+)
+Request URL: /admin/index
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/markularity/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(IndexController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-01-24 17:22:27 Error: [MissingControllerException] Controller class CreateController could not be found.
+Exception Attributes: array (
+  'class' => 'CreateController',
+  'plugin' => NULL,
+)
+Request URL: /admin/create
+Stack Trace:
+#0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-24 17:22:41 Error: [MissingControllerException] Controller class EditController could not be found.
+Exception Attributes: array (
+  'class' => 'EditController',
+  'plugin' => NULL,
+)
+Request URL: /admin/edit
+>>>>>>> d830f1f10f252c0797c5ae2761eafd0a86cc2a38
 Stack Trace:
 #0 /Applications/MAMP/htdocs/markularity/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
