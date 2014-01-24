@@ -30,7 +30,8 @@ $title_for_layout = "Markularity";
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('bootstrap.css');
+		echo $this->Html->script('jquery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -38,24 +39,30 @@ $title_for_layout = "Markularity";
 	?>
 </head>
 <body>
-<div id="container">
- <div id="header">
-<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-</div>
-<div id="content">
 
- <?php echo $this->Session->flash(); ?>
+	<div class="container">
+		<nav class="navbar navbar-default" role="navigation">
+			<a class="navbar-brand" href="#">Markularity</a>
+			<form class="navbar-form navbar-right" role="search">
+			  <div class="form-group">
+			    <input type="text" class="form-control" placeholder="username">
+			  </div>
+			  <div class="form-group">
+			    <input type="text" class="form-control" placeholder="password">
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</nav>
 
- <?php echo $this->fetch('content'); ?>
-</div>
-<div id="footer">
-<?php echo $this->Html->link(
-$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
- 'http://www.cakephp.org/',
-  array('target' => '_blank', 'escape' => false)
-  );
-  ?>
-</div>
-<? echo 'layouts/default.ctp' ?>
+		<div id="content">
+
+		 <?php echo $this->Session->flash(); ?>
+
+		 <?php echo $this->fetch('content'); ?>
+
+		</div>
+		<? echo 'testing, layouts/default.ctp'; ?>
+	</div>
+<?echo $this->Js->writeBuffer();?>
 </body>
 </html>

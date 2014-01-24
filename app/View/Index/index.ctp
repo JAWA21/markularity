@@ -1,5 +1,6 @@
 <?
 
-echo "home works";
+echo 'testing index/index.ctp';
+
 
 ?>
