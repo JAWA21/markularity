@@ -20,6 +20,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('AuthComponent', 'Component');
 
 /**
  * Application Controller
@@ -46,7 +47,11 @@ class AppController extends Controller {
 				'home'
 			),
 			'authorize' => array('Controller'),
+<<<<<<< HEAD
 
+=======
+			'fields' => array('username' => 'username', 'password' => 'password')
+>>>>>>> 401950f00e22a48143cb7b77ae044d7844c01237
 		)
 	);
 
@@ -64,7 +69,11 @@ class AppController extends Controller {
 
 	}
 
+<<<<<<< HEAD
 
+=======
+	//Do not require user to login for all index and view actions in every controller
+>>>>>>> 401950f00e22a48143cb7b77ae044d7844c01237
 	public function beforeFilter() {
 
 		//if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))

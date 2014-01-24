@@ -15,7 +15,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 $title_for_layout = "Markularity";
 
 ?>
@@ -24,8 +23,6 @@ $title_for_layout = "Markularity";
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-	<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
@@ -41,28 +38,52 @@ $title_for_layout = "Markularity";
 <body>
 
 	<div class="container">
+		<br>
 		<nav class="navbar navbar-default" role="navigation">
 			<a class="navbar-brand" href="#">Markularity</a>
-			<form class="navbar-form navbar-right" role="search">
+			<form class="navbar-form navbar-left" role="register">
+				<button type="submit" class="btn btn-primary">Register</button>
+			</form>
+			<form class="navbar-form navbar-right" role="login">
 			  <div class="form-group">
 			    <input type="text" class="form-control" placeholder="username">
 			  </div>
 			  <div class="form-group">
-			    <input type="text" class="form-control" placeholder="password">
+			    <input type="password" class="form-control" placeholder="password">
 			  </div>
-			  <button type="submit" class="btn btn-default">Submit</button>
+			  <button type="submit" class="btn btn-primary">Submit</button>
 			</form>
+			<br>
 		</nav>
 
 		<div id="content">
 
-		 <?php echo $this->Session->flash(); ?>
-
 		 <?php echo $this->fetch('content'); ?>
 
 		</div>
-		<? echo 'testing, layouts/default.ctp'; ?>
 	</div>
 <?echo $this->Js->writeBuffer();?>
+<?php echo $this->Session->flash(); ?>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
