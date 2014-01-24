@@ -1,8 +1,16 @@
 <?php 
+/******************************
+*
+* User Model
+* File Location: app/Model/User.php
+*
+******************************/
+
 App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
 
+	//Hash user passwords before saving to the DB
 	public function beforeSave($options = array()) {
 
 		if(isset($this->data[$this->alias]['password'])) {
@@ -15,6 +23,7 @@ class User extends AppModel {
 
 	}
 
+	//Basic registration validation
 	public $validate = array(
 		'first_name' => array(
 			'required' => array(
@@ -28,7 +37,7 @@ class User extends AppModel {
 				'message' => 'Last name is required.'
 			)
 		),
-		'email' => array(
+		'username' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
 				'message' => 'Email is required.'

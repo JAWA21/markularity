@@ -1,12 +1,20 @@
 <?php
+/******************************
+*
+* UsersController
+* File Location: app/Controller/UsersController.php
+*
+******************************/
+App::uses('AuthComponent', 'Component/Auth');
 
 class UsersController extends AppController {
 
 	public function beforeFilter() {
 
     		parent::beforeFilter();
-    		// Allow users to register and logout.
-    		$this->Auth->allow('register', 'logout');
+
+    		// Allow users to register, login, logout.
+    		$this->Auth->allow('register', 'login', 'logout');
 
 	}
 
@@ -103,19 +111,28 @@ class UsersController extends AppController {
 
 	public function login() {
 
-		if($this->request->is('post')) {
+		$this->Auth->authenticate = array(
+			'Form' => array(
+			'fields' => array('username' => 'username', 'password' =>'password')
+    			)
+        		);
 
-			if($this->Auth->login()) {
 
-				echo "logged in";
-				return $this->redirect($this->Auth->redirect());
+		if($this->Auth->login($this->request->data('Users'))) {
 
-			}
-			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+		        	return $this->redirect($this->Auth->redirect());
 
 		}
 
+		$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+
 	}
+
+	public function admin_dashboard() {
+
+        $title_for_layout = 'Dashbord';
+        $this->set(compact('title_for_layout'));
+    }
 
 	public function logout() {
 
