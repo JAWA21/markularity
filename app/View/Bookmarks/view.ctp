@@ -19,7 +19,7 @@
 			</td>
 
 			<td>
-				<?php echo $bookmark['Bookmark']['category']; ?>
+				<?php echo $bookmark['Bookmark']['bookmark_category_id']; ?>
 			</td>
 
 			<td>
@@ -56,7 +56,23 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li>
+			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index')); ?>
+		</li>
+		<li>
 			<?php echo $this->Html->link(__('New Bookmark'), array('action' => 'add')); ?>
 		</li>
+		<li>
+			<?php echo $this->Html->link(__('Categories'), array(
+					'controller' => 'categories',
+					'action' => 'index',
+			)); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Add Category'), array(
+					'controller' => 'categories',
+					'action' => 'add',
+ 			)); ?>
+		</li>
+
 	</ul>
 </div>

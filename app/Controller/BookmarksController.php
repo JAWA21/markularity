@@ -73,7 +73,7 @@ class BookmarksController extends Controller {
 				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
 			}
 		}
-		$this->set('categories', $this->Bookmark->Category->find('list'));
+		$bookmarkCategories = $this->Bookmark->Category->find('list');
 	}//end add
 
 /**

@@ -1,38 +1,71 @@
-<?php
+<?php 
 App::uses('AppModel', 'Model');
 /**
- * Category Model
- *
- * @property Category $Category
- * @property Category $Category
- */
+*Publication Model
+*
+*/
 class Category extends AppModel {
 
 /**
- * Primary key field
- *
- * @var string
- */
-	public $primaryKey = 'category_id';
+*Primary key field
+*
+*@var string
+*/
+public $primaryKey = 'category_id';
 
 /**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'category_name';
-
+*Display field
+*
+*@var string
+*/
+public $displayField = 'category_name';
 
 /**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Category' => array(
-			'className' => 'Bookmarks',
-			'foreignKey' => 'category',
-		)
-	);
+*Validation rules
+*
+*@var array
+*/
+public $validate = array(
+	'category_id' => array(
+		'blank' => array(
+			'rule' => 'blank',
+			'on' => 'create',
+		),
+	),
+	'category_name' => array(
+		'words' => array(
+			'rule' => array('custom', '/([\w.-]+ )+[\w+.-]/'),
+			'message' => 'The publication name can only contain letters, numbers, and spaces',
+		),
+		'notEmpty' => array(
+			'rule' => array('notEmpty'),
+			'message' => 'The publication name must not be empty',
+		),
+		'maxLength' => array(
+			'rule' => array('maxLength', 100),
+			'message' => 'The publicatio name must not be longer then 100 characters',
+		),
+		'isUnique' => array(
+			'rule' => 'isUnique',
+			'message' => 'The publication name already exists'
+		),
+	),
+);
 
-}
+/**
+*hasMany associations
+*
+*@var array
+*/
+public $hasMany = array(
+	'CategoryBookmarks' => array(
+		'className' => 'Bookmark',
+		'foreignKey' => 'bookmark_category_id',
+	)
+);
+
+}//end class
+
+
+
+?>
