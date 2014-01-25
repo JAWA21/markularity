@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('Bookmark', 'Model');
+//var $uses=array(Bookmark)
 /**
  * Bookmarks Controller
  *
@@ -19,7 +21,7 @@ class AdminsController extends Controller{
 
 	public function index() {
 
-		//$this->set('title_for_layout', 'This is the page title');
+		// $this->set('title_for_layout', 'This is the page title');
 		// $this->set('bookmarks', $this->Bookmark->find('all', array(
 		// 	'conditions' => array(
 		// 		'flag' => false,
@@ -27,7 +29,9 @@ class AdminsController extends Controller{
 		// 	'order' => array('rank' => 'desc'),
 		// 	'limit' => 10,
 		// 	))
-		//);
+		// );
+
+		$this->Admins->Bookmark->set('bookmarks', $this->Bookmark->read(null));
 
 	}
 
