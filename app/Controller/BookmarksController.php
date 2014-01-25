@@ -4,6 +4,7 @@ App::uses('AppController', 'Controller');
  * Bookmarks Controller
  *
  * @property Bookmark $Bookmark
+ * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
 class BookmarksController extends Controller {
@@ -67,16 +68,15 @@ class BookmarksController extends Controller {
 			if ($this->Bookmark->save($this->request->data)) {
 
 				$this->Session->setFlash(__('The bookmark has been saved.'));
-				return $this->redirect(array('action' => 'view'));
+				return $this->redirect(array('action' => 'index'));
 
 			} else {
-				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
-			}
-		}
-		$bookmarkCategories = $this->Bookmark->Category->find('list');
-	}//end add
 
-		public function profile(){
+				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
+
+			}
+
+		}
 
 	}
 
