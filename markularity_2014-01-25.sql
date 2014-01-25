@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.33)
+# Host: 127.0.0.1 (MySQL 5.5.29)
 # Database: markularity
-# Generation Time: 2014-01-25 23:49:56 +0000
+# Generation Time: 2014-01-25 23:58:51 +0000
 # ************************************************************
 
 
@@ -50,6 +50,25 @@ VALUES
 
 /*!40000 ALTER TABLE `bookmarks` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table books
+# ------------------------------------------------------------
+
+DROP VIEW IF EXISTS `books`;
+
+CREATE TABLE `books` (
+   `bookmark_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
+   `url` VARCHAR(100) NULL DEFAULT NULL,
+   `title` VARCHAR(30) NULL DEFAULT NULL,
+   `date_submitted` DATETIME NULL DEFAULT NULL,
+   `user_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
+   `flag` TINYINT(1) NOT NULL DEFAULT '0',
+   `rank` INT(100) NULL DEFAULT NULL,
+   `click` INT(100) NULL DEFAULT NULL,
+   `bookmark_category_id` INT(10) NULL DEFAULT NULL
+) ENGINE=MyISAM;
+
 
 
 # Dump of table categories
@@ -195,6 +214,25 @@ VALUES
 UNLOCK TABLES;
 
 
+
+
+# Replace placeholder table for books with correct view syntax
+# ------------------------------------------------------------
+
+DROP TABLE `books`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `books`
+AS SELECT
+   `b`.`bookmark_id` AS `bookmark_id`,
+   `b`.`url` AS `url`,
+   `b`.`title` AS `title`,
+   `b`.`date_submitted` AS `date_submitted`,
+   `users`.`user_id` AS `user_id`,
+   `b`.`flag` AS `flag`,
+   `b`.`rank` AS `rank`,
+   `b`.`click` AS `click`,
+   `b`.`bookmark_category_id` AS `bookmark_category_id`
+FROM (`bookmarks` `b` join `users` on((`users`.`user_id` = `b`.`user_id`)));
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
