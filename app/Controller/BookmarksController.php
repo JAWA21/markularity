@@ -80,6 +80,10 @@ class BookmarksController extends Controller {
 
 	}
 
+		public function profile(){
+
+	}
+
 /**
  * edit method
  *

@@ -1,1 +1,0 @@
-<p>This is the user admin view</p>
