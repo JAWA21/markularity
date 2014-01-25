@@ -52,17 +52,6 @@ public $validate = array(
 	),
 );
 
-/**
-*hasMany associations
-*
-*@var array
-*/
-public $hasMany = array(
-	'CategoryBookmarks' => array(
-		'className' => 'Bookmark',
-		'foreignKey' => 'bookmark_category_id',
-	)
-);
 
 }//end class
 
