@@ -77,6 +77,10 @@ class BookmarksController extends Controller {
 		$this->set('bookmarkCategories', $bookmarkCategories);
 	}//end add
 
+		public function profile(){
+
+	}
+
 /**
  * edit method
  *

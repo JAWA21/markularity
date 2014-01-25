@@ -19,17 +19,15 @@ $title_for_layout = "Markularity";
 
 ?>
 <!DOCTYPE html>
-<?
-$title_for_layout = "Markularity";
-?>
-
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
+	<?php echo $this->Html->charset();
+		  echo $this->Html->script('bootstrap.js');
+	?>
 	<title>
 		<?php 
 			echo $title_for_layout;
-			echo $this->Html->script('bootstrap.js');?>
+		?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');

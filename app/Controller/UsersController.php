@@ -1,11 +1,12 @@
 <?php
+App::uses('AppController', 'Controller');
 /******************************
 *
 * UsersController
 * File Location: app/Controller/UsersController.php
 *
 ******************************/
-App::uses('AuthComponent', 'Component/Auth');
+//App::uses('AuthComponent', 'Component/Auth');
 
 class UsersController extends AppController {
 
@@ -34,6 +35,10 @@ class UsersController extends AppController {
 
 		}
 		$this->set('user', $this->User->read(null, $id));
+
+	}
+
+	public function profile(){
 
 	}
 
@@ -143,12 +148,6 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
 
 	}
-
-	public function admin_dashboard() {
-
-        $title_for_layout = 'Dashbord';
-        $this->set(compact('title_for_layout'));
-    }
 
 	public function logout() {
 
