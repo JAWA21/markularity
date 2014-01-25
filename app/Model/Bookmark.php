@@ -70,4 +70,12 @@ class Bookmark extends AppModel {
 			),
 		),
 	);
-}
+public $hasMany = array(
+	'Category' => array (
+		'className' => 'Category',
+		'foreignKey' => 'bookmark_category_id',
+	)
+);
+
+
+}//end class

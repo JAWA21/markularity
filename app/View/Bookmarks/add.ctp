@@ -8,6 +8,7 @@
 
 		echo $this->Form->input('Category', array(
 			'type' => 'select',
+			'options' => $bookmarkCategories,
 		));
 
 		echo $this->Form->input('date_submitted');
@@ -22,10 +23,28 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li>
-			<?php echo $this->Html->link(__('View Top 10'), array('action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index')); ?>
 		</li>
 		<li>
 			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add')); ?>
+		</li>
+		<li>
+			<h3>Categories</h3>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Categories'), array(
+					'controller' => 'categories',
+					'action' => 'index',
+			)); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Add Category'), array(
+					'controller' => 'categories',
+					'action' => 'add',
+ 			)); ?>
 		</li>
 	</ul>
 </div>

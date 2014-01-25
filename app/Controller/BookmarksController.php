@@ -74,6 +74,7 @@ class BookmarksController extends Controller {
 			}
 		}
 		$bookmarkCategories = $this->Bookmark->Category->find('list');
+		$this->set('bookmarkCategories', $bookmarkCategories);
 	}//end add
 
 /**
