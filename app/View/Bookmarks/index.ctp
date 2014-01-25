@@ -41,10 +41,10 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li>
-			<?php echo $this->Html->link(__('New Bookmark'), array('action' => 'add')); ?>
+			<?php echo $this->Html->link(__('View Bookmarks'), array('action' => 'view')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('View Bookmarks'), array('action' => 'edit')); ?>
+			<?php echo $this->Html->link(__('New Bookmark'), array('action' => 'add')); ?>
 		</li>
 	</ul>
 </div>

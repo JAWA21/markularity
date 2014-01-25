@@ -47,7 +47,8 @@ class AppController extends Controller {
 				'home'
 			),
 			'authorize' => array('Controller'),
-			'fields' => array('username' => 'email', 'password' => 'password')
+
+			'fields' => array('username' => 'username', 'password' => 'password')
 
 		)
 	);
