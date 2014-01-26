@@ -69,7 +69,7 @@ class UsersController extends AppController {
             			}else {
 
             				$this->Session->setFlash(__('Registration Successful!'));
-            				$this->login($user);
+            				$this->login();
 
             			}
 
@@ -82,11 +82,6 @@ class UsersController extends AppController {
             			// );
 
             			// return $this->Auth->redirectUrl('bookmarks');
-            			if($this->Auth->login()){
-
-    				$this->redirect($this->Auth->redirect());
-
-			}	
 
         		}
 
@@ -161,11 +156,13 @@ class UsersController extends AppController {
 		$this->Auth->authenticate = array(
 			'Form' => array(
 
-			$user = array(
-				'username' => $this->request->data['User']['username'],
-				'password' =>  $this->request->data['User']['password'],
-				'role' => 'author'
-			);
+				$user = array(
+					'username' => $this->request->data['User']['username'],
+					'password' =>  $this->request->data['User']['password'],
+					'role' => 'author'
+				)
+			)
+		);
 
 			$this->Auth->authenticate = array(
 				'Form' => array(
@@ -174,16 +171,6 @@ class UsersController extends AppController {
 	   			)
 
 			);
-
-			if($this->Auth->login($this->request->data('Users'))) {
-
-			        	return $this->Auth->redirect(array(
-			        		'controller' => 'bookmarks',
-			        		'action' => 'index'
-			        		)
-			        	);
-
-			}
 
 			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
 
