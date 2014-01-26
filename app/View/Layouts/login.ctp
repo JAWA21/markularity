@@ -31,15 +31,14 @@ $title_for_layout = "Markularity";
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('bootstrap.css');
+		echo $this->Html->css(array('signin.css','bootstrap.css'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
-<body>
+<body style='padding-top:0px;'>
 
 	<div class="container">
 		<br>
@@ -54,7 +53,9 @@ $title_for_layout = "Markularity";
 
 		<div id="content">
 
-		 <?php echo $this->fetch('content'); ?>
+		 <?php echo $this->fetch('content');?>
+
+
 
 		</div>
 	</div>
