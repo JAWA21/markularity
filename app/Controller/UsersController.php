@@ -9,6 +9,9 @@ App::uses('AuthComponent', 'Component/Auth');
 
 class UsersController extends AppController {
 
+	var $name = 'Users';
+	var $components = array('Auth');
+
 	public function beforeFilter() {
 
     		parent::beforeFilter();
@@ -48,7 +51,7 @@ class UsersController extends AppController {
 				'lastname' => $this->request->data['User']['lastname'],
 				'role' => 'author'
 			);
-
+        			//Debugger::dump($this->request->data);
         			$createdSuccess = $this->User->save(array(
         				'User' => $user
     			));
@@ -56,10 +59,27 @@ class UsersController extends AppController {
             			if (!$createdSuccess) {
             				$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
             				return;
+            			}else {
+
+            				$this->Session->setFlash(__('Registration Successful!'));
+            				$this->login($user);
+
             			}
 
-            			$this->Session->setFlash(__('Registration Successful!'));
-            			$this->Auth->login();	
+            			
+            			// $this->Auth->loginAction(array(
+            			// 	'controller' => 'users',
+            			// 	'action' => 'login',
+            			// 	'plugin' => null
+            			// 	)
+            			// );
+
+            			// return $this->Auth->redirectUrl('bookmarks');
+            			if($this->Auth->login()){
+
+    				$this->redirect($this->Auth->redirect());
+
+			}	
 
         		}
 
@@ -126,21 +146,35 @@ class UsersController extends AppController {
 
 	public function login(){
 
-		$this->Auth->authenticate = array(
-			'Form' => array(
+		if ($this->request->is('post')) {
 
-			'fields' => array('username' => 'username', 'password' =>'password')
-   			)
+			$user = array(
+				'username' => $this->request->data['User']['username'],
+				'password' =>  $this->request->data['User']['password'],
+				'role' => 'author'
+			);
 
-		);
+			$this->Auth->authenticate = array(
+				'Form' => array(
 
-		if($this->Auth->login($this->request->data('Users'))) {
+				'fields' => array('username' => 'username', 'password' =>'password')
+	   			)
 
-		        	return $this->redirect($this->Auth->redirect());
+			);
+
+			if($this->Auth->login($this->request->data('Users'))) {
+
+			        	return $this->Auth->redirect(array(
+			        		'controller' => 'bookmarks',
+			        		'action' => 'index'
+			        		)
+			        	);
+
+			}
+
+			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
 
 		}
-
-		$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
 
 	}
 

@@ -14,5 +14,5 @@
 	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password'));
 	echo $this->Form->hidden('role', array('id' => 'role', 'value' => 'author'));
 	echo $this->Form->end(__('Register'));
-?>
+?> 
 
