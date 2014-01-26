@@ -61,7 +61,7 @@ class BookmarksController extends Controller {
 
 		if ($this->request->is('post')) {
 
-			$this->request->data['Bookmark']['user_id'] = $this->Auth->user('id');
+			//$this->request->data['Bookmark']['user_id'] = $this->Auth->user('id');
 			$this->Bookmark->create();
 
 			if ($this->Bookmark->save($this->request->data)) {
@@ -73,8 +73,6 @@ class BookmarksController extends Controller {
 				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
 			}
 		}
-		$bookmarkCategories = $this->Bookmark->Category->find('list');
-		$this->set('bookmarkCategories', $bookmarkCategories);
 	}//end add
 
 		public function profile(){
