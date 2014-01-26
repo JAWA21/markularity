@@ -44,7 +44,7 @@ $title_for_layout = "Markularity";
 	<div class="container">
 		<br>
 		<nav class="navbar navbar-default" role="navigation">
-			<a class="navbar-brand" href="#">Markularity</a>
+			<a class="navbar-brand" href="http://localhost:8888">Markularity</a>
 			<form class="navbar-form navbar-right" role="register">
 				<a href="http://localhost:8888/users/register" class="btn btn-primary">Register</a>
 				<a href="http://localhost:8888/users/login" class="btn btn-primary">Login</a>
