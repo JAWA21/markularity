@@ -1,7 +1,6 @@
 <?php
-App::uses('AppController', 'Controller');
+//App::uses('AppController', 'Controller');
 App::uses('Bookmark', 'Model');
-//var $uses=array(Bookmark)
 /**
  * Bookmarks Controller
  *
@@ -30,8 +29,17 @@ class AdminsController extends Controller{
 		// 	'limit' => 10,
 		// 	))
 		// );
+		// $bookmarks = $this->Admins->Bookmark->find('all');
+		// Debugger::dump($bookmarks);
+		// $this->set('bookmarks', $bookmarks);
 
-		$this->Admins->Bookmark->set('bookmarks', $this->Bookmark->read(null));
+		// $this->Bookmark->find('all');
+		// Debugger::dump($this);
+
+		$this->Bookmark->query("SELECT * FROM bookmarks;");
+		Debugger::dump($this);
+		
+
 
 	}
 
