@@ -1,11 +1,12 @@
 <?php
+App::uses('AppController', 'Controller');
 /******************************
 *
 * UsersController
 * File Location: app/Controller/UsersController.php
 *
 ******************************/
-App::uses('AuthComponent', 'Component/Auth');
+//App::uses('AuthComponent', 'Component/Auth');
 
 class UsersController extends AppController {
 
@@ -40,7 +41,13 @@ class UsersController extends AppController {
 
 	}
 
+	public function profile(){
+
+	}
+
 	public function register() {
+
+				$this->layout = 'register';
 
         		if ($this->request->is('post')) {
 
@@ -146,7 +153,13 @@ class UsersController extends AppController {
 
 	public function login(){
 
+
 		if ($this->request->is('post')) {
+
+		$this->layout = 'login';
+
+		$this->Auth->authenticate = array(
+			'Form' => array(
 
 			$user = array(
 				'username' => $this->request->data['User']['username'],
@@ -177,12 +190,6 @@ class UsersController extends AppController {
 		}
 
 	}
-
-	public function admin_dashboard() {
-
-        $title_for_layout = 'Dashbord';
-        $this->set(compact('title_for_layout'));
-    }
 
 	public function logout() {
 

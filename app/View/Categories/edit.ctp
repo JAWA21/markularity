@@ -1,39 +1,12 @@
-<div class="bookmarks index">
-	<h2><?php echo __('Top 10 Bookmarks'); ?></h2>
-	
-	<table>
-		<tr>
-			<th>Bookmark</th>
-			<th>Category</th>
-			<th>Rank</th>
-			<th>Thumbs</th>
-		</tr>
-
-		<?php foreach ($bookmarks as $bookmark): ?>
-		<tr>
-			<td>
-				<?php 
-					echo $this->Html->link($bookmark['Bookmark']['title'], $bookmark['Bookmark']['url']);
-				?>
-			</td>
-
-			<td>
-				<?php echo $bookmark['Bookmark']['bookmark_category_id']; ?>
-			</td>
-
-			<td>
-				<?php echo $bookmark['Bookmark']['rank']; ?>
-			</td>
-
-			<td>
-				thumb images
-				<img src="img/thumbsup.png">
-				<img src="img/thumbsdown.png">
-			</td>
-		</tr>
-		<?php endforeach; ?>
-	</table>
-
+<div class="categories form">
+<?php echo $this->Form->create('Category'); ?>
+	<fieldset>
+		<legend><?php echo __('Edit Category'); ?></legend>
+	<?php
+		echo $this->Form->input('category_name', array('label' => __('Category:')));
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Edit Category')); ?>
 </div>
 
 
