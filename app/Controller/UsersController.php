@@ -44,6 +44,8 @@ class UsersController extends AppController {
 
 	public function register() {
 
+				$this->layout = 'register';
+
         		if ($this->request->is('post')) {
 
         			$user = array(
@@ -130,6 +132,8 @@ class UsersController extends AppController {
 	}
 
 	public function login(){
+
+		$this->layout = 'login';
 
 		$this->Auth->authenticate = array(
 			'Form' => array(
