@@ -28,8 +28,8 @@ $title_for_layout = "Markularity";
 			<nav class="navbar navbar-default" role="navigation">
 				<a class="navbar-brand" href="/">Markularity</a>
 				<div class="navbar-form navbar-right" role="register">
-					<a href="/users/add" class="btn btn-primary">Register</a>
-					<a href="/users/login" class="btn btn-primary">Login</a>
+					<a href="/register" class="btn btn-primary">Register</a>
+					<a href="/login" class="btn btn-primary">Login</a>
 				</div>
 				<br>
 			</nav>
