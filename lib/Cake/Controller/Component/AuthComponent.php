@@ -591,9 +591,9 @@ class AuthComponent extends Component {
  * @link http://book.cakephp.org/2.0/en/core-libraries/components/authentication.html#identifying-users-and-logging-them-in
  */
 	public function login($user = null) {
-		echo '<pre>';
-		var_dump($this->Session->read());
-		echo '</pre>';
+		// echo '<pre>';
+		// var_dump($this->Session->read());
+		// echo '</pre>';
 
 		//var_dump($user);
 
