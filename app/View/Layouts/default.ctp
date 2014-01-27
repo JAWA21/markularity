@@ -12,7 +12,7 @@ $title_for_layout = "Markularity";
 
 		echo $this -> Html -> script('bootstrap.js');
 
-		echo $this -> Html -> css('bootstrap.css');
+		echo $this -> Html -> css(array('bootstrap.css','signin.css'));
 
 		echo $this -> fetch('meta');
 		echo $this -> fetch('css');
