@@ -1,10 +1,4 @@
-<!-- ************************
-*
-* Register View
-* File Location: app/View/Users/register.ctp 
-*
-************************ -->
-
+<h1>Tests Index</h1>
 
 <div class='navbar-form'>
 <?php echo $this->Form->create('User', array('action' => 'register')); ?>
