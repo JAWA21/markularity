@@ -155,6 +155,13 @@ class BookmarksController extends Controller {
 		//from id, get the url from query
 		//add point from clickthrough
 		//new tab to url
+
+		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
+		$url =  $query['Bookmark']['url'];
+
+		$this->redirect('http://www.' . $url);
+		
+
 	}//end clickThrough
 
 }
