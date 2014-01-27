@@ -16,8 +16,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 $title_for_layout = "Markularity";
-$username = $this->Session->read('username');
-
 
 ?>
 <!DOCTYPE html>
@@ -48,15 +46,8 @@ $username = $this->Session->read('username');
 		<nav class="navbar navbar-default" role="navigation">
 			<a class="navbar-brand" href="/index.php">Markularity</a>
 			<form class="navbar-form navbar-right" role="register">
-				<?
-					if($this->Session->check('username')){
-						echo '<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">'?><?$this->Session->read('username');?><?'</a></p>';
-					}else{
-						echo '<a href="/users/add" class="btn btn-primary">Register</a>';
-						echo '<a href="/users/login" class="btn btn-primary">Login</a>';
-					}
-
-				?>
+				<a href="/users/add" class="btn btn-primary">Register</a>
+				<a href="/users/login" class="btn btn-primary">Login</a>
 			</form>
 			<br>
 		</nav>

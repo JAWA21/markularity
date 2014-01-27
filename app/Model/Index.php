@@ -18,4 +18,18 @@ class index extends AppModel{
 		return $query;
 
 	}
+
+	public function click(){
+		$query = $this->query('all', array('order'=>'rank DESC', 'limit' => 10));
+		//$query->select(['bookmark_id', 'title']);
+		return $query;
+	}
+
+	public function thUp(){
+
+	}
+
+	public function thDown(){
+
+	}
 }
