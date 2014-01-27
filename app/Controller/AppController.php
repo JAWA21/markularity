@@ -80,6 +80,8 @@ class AppController extends Controller {
 		$this->layout = 'admin';
 		$this->Auth->allow('index', 'view');
 
+		$this->set('username', AuthComponent::user('username'));
+
 	}
 
 }

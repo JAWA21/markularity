@@ -1,4 +1,6 @@
 <?
+App::uses('AppController', 'Controller');
+
 class IndexController extends AppController{
 
     public $helpers = array('Html', 'Form');
@@ -6,6 +8,13 @@ class IndexController extends AppController{
     public function index() {
     	$this->layout = 'index';
     	
+    	//$bookmarks = $this->Index->topTen();
+
+    	$this->set('bookmarks', $this->Index->topTen());
+    }
+
+    public function clickThru(){
+
     }
 
 

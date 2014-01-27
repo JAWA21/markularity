@@ -43,10 +43,10 @@ $title_for_layout = "Markularity";
 	<div class="container">
 		<br>
 		<nav class="navbar navbar-default" role="navigation">
-			<a class="navbar-brand" href="http://localhost:8888">Markularity</a>
+			<a class="navbar-brand" href="/index.php">Markularity</a>
 			<form class="navbar-form navbar-right" role="register">
-				<a href="http://localhost:8888/users/register" class="btn btn-primary">Register</a>
-				<a href="http://localhost:8888/users/login" class="btn btn-primary">Login</a>
+				<a href="/users/register" class="btn btn-primary">Register</a>
+				<a href="/users/login" class="btn btn-primary">Login</a>
 			</form>
 			<br>
 		</nav>
@@ -64,24 +64,3 @@ $title_for_layout = "Markularity";
     <script src="https://code.jquery.com/jquery.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

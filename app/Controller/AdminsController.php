@@ -1,5 +1,5 @@
 <?php
-//App::uses('AppController', 'Controller');
+App::uses('AppController', 'Controller');
 App::uses('Bookmark', 'Model');
 /**
  * Bookmarks Controller
@@ -19,6 +19,7 @@ class AdminsController extends Controller{
 	public $components = array('Session');
 
 	public function index() {
+		$this->layout = 'admin';
 
 		// $this->set('title_for_layout', 'This is the page title');
 		// $this->set('bookmarks', $this->Bookmark->find('all', array(
@@ -33,11 +34,11 @@ class AdminsController extends Controller{
 		// Debugger::dump($bookmarks);
 		// $this->set('bookmarks', $bookmarks);
 
-		// $this->Bookmark->find('all');
-		// Debugger::dump($this);
+		// $bookmarks = $this->Bookmark->find('all');
+		// Debugger::dump($bookmarks);
 
-		// $this->Bookmark->query("SELECT * FROM bookmarks;");
-		// Debugger::dump($this);
+		$bookmarks = $this->Bookmark->query("SELECT * FROM bookmarks;");
+		Debugger::dump($bookmarks);
 
 	}
 
