@@ -161,7 +161,7 @@ class UsersController extends AppController {
 
 		        if ($this->Auth->login()) {
 
-		            return $this->redirect($this->Auth->login());
+		            return $this->redirect($this->Auth->redirect());
 		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		            //$this->Session->setFlash(__('Success'));
 		        }
@@ -205,7 +205,7 @@ class UsersController extends AppController {
 
 	// } //End loginView()
 
-	public function logout() {
+	public function userLogout() {
 
 		$this->Session->setFlash(__('You have successfully logged out. Goodbye.'));
 		return $this->redirect($this->Auth->logout());
