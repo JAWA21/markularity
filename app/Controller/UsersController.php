@@ -51,6 +51,8 @@ class UsersController extends AppController {
 
 	public function  add() {
 
+				var_dump($this->request->data);
+
         		if ($this->request->is('post')) {
 
         			$user = array(
