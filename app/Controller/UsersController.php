@@ -161,12 +161,11 @@ class UsersController extends AppController {
 
 		        if ($this->Auth->login()) {
 
-		            return $this->redirect($this->Auth->redirect());
+		            return $this->redirect($this->Auth->login());
+		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		            //$this->Session->setFlash(__('Success'));
 		        }
 		        $this->Session->setFlash(__('Invalid username or password, try again'));
-		    
-
 
 			// $authResult = $this->Auth->authenticate = array(
 			// 	'Form' => array(
