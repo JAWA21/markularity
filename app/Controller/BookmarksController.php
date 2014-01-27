@@ -55,6 +55,7 @@ class BookmarksController extends AppController {
 		
 		$this->layout = 'admin';
 		
+		//pull just the users specific bookmarks
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
@@ -63,6 +64,14 @@ class BookmarksController extends AppController {
 			'limit' => 10,
 			))
 		);
+
+		// $this->set('bookmarks', $this->Bookmark->findByUserId($user_id, array(
+		// 	'conditions' => array(
+		// 		'flag' => false,
+		// 	),
+		// 	'order' => array('rank' => 'desc'),
+		// 	'limit' => 10,	
+		// )));
 	}
 
 /**
