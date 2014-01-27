@@ -53,8 +53,6 @@ class UsersController extends AppController {
 
         		if ($this->request->is('post')) {
 
-        			$this->User->create();
-
         			if($this->User->save($this->request->data)) {
         				$this->Session->write('username',$this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
