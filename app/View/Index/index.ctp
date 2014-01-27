@@ -26,6 +26,7 @@
 		<tr>
 			<th>Bookmarks</th>
 			<th>Visit</th>
+			<th>Vote</th>
 		</tr>
 
 		<?php foreach ($bookmarks as $bookmark): ?>
@@ -37,10 +38,23 @@
 				<?php
 					echo $this->Html->link(
 						'Visit',
-						array('action' => 'clickThru', $index['Bookmark']['click'])
+						array('action' => 'clickThru')
 					);
 				?>
-			</td>	
+			</td>
+			<td>
+				<?php
+					echo $this->Html->link(
+						'Up',
+						array('action' => 'thumbUp')
+					);
+
+					echo $this->Html->link(
+						'Down',
+						array('action' => 'thumbDown')
+					);
+				?>
+			</td>
 		</tr>
 		<?php endforeach; ?>
 	</table>
