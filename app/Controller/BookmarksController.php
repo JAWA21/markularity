@@ -4,7 +4,6 @@ App::uses('AppController', 'Controller');
  * Bookmarks Controller
  *
  * @property Bookmark $Bookmark
- * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
 class BookmarksController extends Controller {
@@ -22,7 +21,8 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function index() {
-
+		$username = $this->Session->read('Auth.Users.username');
+		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
@@ -62,21 +62,21 @@ class BookmarksController extends Controller {
 
 		if ($this->request->is('post')) {
 
-			$this->request->data['Bookmark']['user_id'] = $this->Auth->user('id');
+			//$this->request->data['Bookmark']['user_id'] = $this->Auth->user('id');
 			$this->Bookmark->create();
 
 			if ($this->Bookmark->save($this->request->data)) {
 
 				$this->Session->setFlash(__('The bookmark has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'view'));
 
 			} else {
-
 				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
-
 			}
-
 		}
+	}//end add
+
+		public function profile(){
 
 	}
 
@@ -88,35 +88,27 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function edit($bookmark_id = null) {
-
-		if (!$this->Bookmark->exists($id)) {
-
-			throw new NotFoundException(__('Invalid bookmark'));
-
+		if(!$bookmark_id) {
+			throw new NotFoundException(__('Invalid Bookmark'));
 		}
 
-		if ($this->request->is(array('post', 'put'))) {
+		$bookmark = $this->Bookmark->findByBookmarkId($bookmark_id);
+		if(!$bookmark) {
+			throw new NotFoundException(__('Invalid Bookmark'));
+		}
 
-			if ($this->Bookmark->save($this->request->data)) {
-
-				$this->Session->setFlash(__('The bookmark has been saved.'));
-
-				return $this->redirect(array('action' => 'index'));
-
-			} else {
-
-				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
-
+		if($this->request->is(array('post', 'put'))) {
+			$this->Bookmark->id = $bookmark_id;
+			if($this->Bookmark->save($this->request->data)) {
+				$this->Session->setFlash(__('Bookmark edited'));
+				return $this->redirect(array('action' => 'view'));
 			}
-
-		} else {
-
-			$options = array('conditions' => array('Bookmark.' . $this->Bookmark->primaryKey => $id));
-			$this->request->data = $this->Bookmark->find('first', $options);
-
+			$this->Session->setFlash(__('Unable to update bookmark'));
 		}
-
-	}
+		if(!$this->request->data) {
+			$this->request->data = $bookmark;
+		}
+	}//end edit
 
 /**
  * delete method
@@ -145,7 +137,7 @@ class BookmarksController extends Controller {
 			$this->Session->setFlash(__('The bookmark could not be deleted. Please, try again.'));
 
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'view'));
 
 	}
 	

@@ -58,16 +58,12 @@ class Bookmark extends AppModel {
 				'message' => 'Bookmark category is required',
 			),
 		),
-		'date_submitted' => array(
-			'notEmpty' => array(
-				'rule' => array('blank'),
-				'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'user_id' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 			),
 		),
 	);
-}
+
+
+}//end class

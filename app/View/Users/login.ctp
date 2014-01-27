@@ -6,7 +6,7 @@
 ************************ -->
 
 <?php echo $this->Session->flash('auth'); ?>
-<?php echo $this->Form->create('Users'); ?>
+<?php echo $this->Form->create('User'); ?>
 
 <h2>User Login</h2>
 <?php echo '<small>Please enter your username and password</small><br>'; ?>
