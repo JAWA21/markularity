@@ -38,8 +38,8 @@ class AppController extends Controller {
 		'Session',
 		'Auth' => array(
 			'loginRedirect' => array(
-				'controller' => 'bookmarks',
-				'action' => 'index'
+				'controller' => 'users',
+				'action' => 'login'
 			),
 			'logoutRedirect' => array(
 				'controller' => 'pages',
@@ -78,7 +78,7 @@ class AppController extends Controller {
 
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
 		$this->layout = 'admin';
-		$this->Auth->allow('index', 'view', 'login', 'register');
+		$this->Auth->allow('index', 'view', 'login', 'add');
 
 		$this->set('username', AuthComponent::user('username'));
 
