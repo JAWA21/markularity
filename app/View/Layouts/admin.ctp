@@ -29,7 +29,7 @@ $title_for_layout = "Markularity";
 	       <nav class="navbar navbar-default" role="navigation">
 				<a class="navbar-brand" href="/">Markularity</a>
 				<div class="navbar-form navbar-right" role="register">
-					<a href="/users/userLogout" class="btn btn-primary">Logout</a>
+					<a href="/logout" class="btn btn-primary">Logout</a>
 				</div>
 				<br>
 			</nav>
