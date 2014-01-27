@@ -1,6 +1,6 @@
 <div class="bookmarks index">
+<h1>Welcome <?php echo $_SESSION['Auth']['User']['firstname'];?>!</h1>
 	<h2><?php echo __('Top 10 Bookmarks'); ?></h2>
-	
 	<table>
 		<tr>
 			<th>Bookmark</th>
@@ -54,21 +54,6 @@
 		</li>
 		<li>
 			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add')); ?>
-		</li>
-		<li>
-			<h3>Categories</h3>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Categories'), array(
-					'controller' => 'categories',
-					'action' => 'index',
-			)); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Add Category'), array(
-					'controller' => 'categories',
-					'action' => 'add',
- 			)); ?>
 		</li>
 	</ul>
 </div>

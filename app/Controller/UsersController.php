@@ -54,14 +54,13 @@ class UsersController extends AppController {
 
 	public function  add() {
 
-				$this->layout = 'register';
-
         		if ($this->request->is('post')) {
 
         			$this->User->create();
 
         			if($this->User->save($this->request->data)) {
-
+        				$this->Session->write('username',$this->request->data['User']['firstname']);
+        				// var_dump($this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
         				return $this->redirect(array('controller'=>'Bookmarks', 'action' => 'index'));
 
@@ -156,13 +155,13 @@ class UsersController extends AppController {
 
 	public function login(){
 
-		$this->layout = 'login';
 		if ($this->request->is('post')) {
 
 		        if ($this->Auth->login()) {
 
 		            return $this->redirect($this->Auth->redirect());
-		            $this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
+
+		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		            //$this->Session->setFlash(__('Success'));
 		        }
 		        $this->Session->setFlash(__('Invalid username or password, try again'));
@@ -201,11 +200,9 @@ class UsersController extends AppController {
 
 	// public function loginView() {
 
-	// 	$this->layout = 'login';
-
 	// } //End loginView()
 
-	public function logout() {
+	public function userLogout() {
 
 		$this->Session->setFlash(__('You have successfully logged out. Goodbye.'));
 		return $this->redirect($this->Auth->logout());
