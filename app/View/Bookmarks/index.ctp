@@ -16,7 +16,8 @@
 					echo $this->Html->link($bookmark['Bookmark']['title'], array(
 							'action' => 'clickThrough',
 							$bookmark['Bookmark']['bookmark_id'],
-					));
+					),
+					array('target' => '_blank'));
 				?>
 			</td>
 
