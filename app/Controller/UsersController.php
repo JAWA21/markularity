@@ -7,8 +7,13 @@ App::uses('BookmarksController', 'Controller');
 * UsersController
 * File Location: app/Controller/UsersController.php
 *
+*
+* Code for getting the user_id from the Session:
+* echo '<pre>';
+* var_dump($this->Auth->User('user_id'));
+* echo '</pre>';
+
 ******************************/
-//App::uses('AuthComponent', 'Component/Auth');
 
 class UsersController extends AppController {
 
@@ -19,7 +24,7 @@ class UsersController extends AppController {
 
     		parent::beforeFilter();
 
-    		// Allow users to register, login, logout.
+    		// Allow users to register, logout.
     		$this->Auth->allow('add', 'logout');
 
 	} //End beforeFilter()
@@ -154,15 +159,8 @@ class UsersController extends AppController {
 		$this->layout = 'login';
 		if ($this->request->is('post')) {
 
-
-
-			//Debugger::dump($this->data);
-
 		        if ($this->Auth->login()) {
 
-		        	echo '<pre>';
-		var_dump($this->Auth->User('user_id'));
-		echo '</pre>';
 		            return $this->redirect($this->Auth->redirect());
 		            //$this->Session->setFlash(__('Success'));
 		        }
