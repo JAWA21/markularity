@@ -24,9 +24,6 @@ class UsersController extends AppController {
 
     		parent::beforeFilter();
 
-    		// Allow users to register, logout.
-    		//$this->Auth->allow('add', 'login', 'logout');
-
 	} //End beforeFilter()
 
 	public function index() {
@@ -60,35 +57,11 @@ class UsersController extends AppController {
 
         			if($this->User->save($this->request->data)) {
         				$this->Session->write('username',$this->request->data['User']['firstname']);
-        				// var_dump($this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
         				return $this->redirect(array('controller'=>'Bookmarks', 'action' => 'index'));
 
         			}
         			$this->Session->setFlash(__('Information was not saved. Please try again.'));
-
-
-   //      			$user = array(
-			// 	'username' => $this->request->data['User']['username'],
-			// 	'password' =>  $this->request->data['User']['password'],
-			// 	'firstname' => $this->request->data['User']['firstname'],
-			// 	'lastname' => $this->request->data['User']['lastname'],
-			// 	'role' => 'author'
-			// );
-   //      			//Debugger::dump($this->request->data);
-   //      			$createdSuccess = $this->User->save(array(
-   //      				'User' => $user
-   //  			));
-
-   //          			if (!$createdSuccess) {
-   //          				$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
-   //          				return;
-   //          			}else {
-
-   //          				$this->Session->setFlash(__('Registration Successful!'));
-   //          				$this->Auth->login($user);
-
-   //          			}
 
         		}
 
@@ -161,46 +134,12 @@ class UsersController extends AppController {
 
 		            return $this->redirect($this->Auth->redirect());
 
-		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
-		            //$this->Session->setFlash(__('Success'));
 		        }
 		        $this->Session->setFlash(__('Invalid username or password, try again'));
-
-			// $authResult = $this->Auth->authenticate = array(
-			// 	'Form' => array(
-
-			// 		'fields' => array('username' => 'test@test.com', 'password' =>'test')
-	  //  			)
-
-			// );
-			// Debugger::dump($authResult);
-
-			// $bool = true;
-
-			// array_push($this->Auth->authenticate['Form'], $bool);
-
-			// if($this->Auth->authenticate['Form'][0] === true) {
-
-			// 	$this->redirect($this->Auth->redirect(array(
-			// 		'controller' => 'bookmarks',
-			// 		'action' => 'index'
-			// 		)
-			// 	));
-
-			// }else {
-
-			// 	$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
-
-			// }
-
-		// }
-		
-	     }
+			
+	     	}
+	     	
 	} //End login()
-
-	// public function loginView() {
-
-	// } //End loginView()
 
 	public function userLogout() {
 
