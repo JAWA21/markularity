@@ -21,6 +21,7 @@ $title_for_layout = "Markularity";
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<?php echo $this->Html->charset();
 		  echo $this->Html->script('bootstrap.js');
 	?>
@@ -60,7 +61,7 @@ $title_for_layout = "Markularity";
 	</div>
 <?echo $this->Js->writeBuffer();?>
 <?php echo $this->Session->flash(); ?>
-    <script src="https://code.jquery.com/jquery.js"></script>
+
 </body>
 </html>
 
