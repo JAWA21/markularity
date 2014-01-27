@@ -143,6 +143,18 @@ class BookmarksController extends Controller {
 		}
 		return $this->redirect(array('action' => 'view'));
 
-	}
-	
+	}//end delete
+
+/**
+ * clickThrough method
+ *
+ *@param int $bookmark_id
+ *takes the id passed through, gets the link, add the point, redirect in new tab
+ */
+	public function clickThrough($bookmark_id) {
+		//from id, get the url from query
+		//add point from clickthrough
+		//new tab to url
+	}//end clickThrough
+
 }

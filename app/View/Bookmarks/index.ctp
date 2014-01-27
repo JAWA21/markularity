@@ -13,7 +13,10 @@
 		<tr>
 			<td>
 				<?php 
-					echo $this->Html->link($bookmark['Bookmark']['title'], $bookmark['Bookmark']['url']);
+					echo $this->Html->link($bookmark['Bookmark']['title'], array(
+							'action' => 'clickThrough',
+							$bookmark['Bookmark']['bookmark_id'],
+					));
 				?>
 			</td>
 
