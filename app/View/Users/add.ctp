@@ -1,7 +1,7 @@
 <!-- ************************
 *
 * Register View
-* File Location: app/View/Users/register.ctp 
+* File Location: app/View/Users/add.ctp 
 *
 ************************ -->
 
@@ -9,7 +9,7 @@
 
 
 <div class='navbar-form'>
-<?php echo $this->Form->create('User', array('action' => 'register')); ?>
+<?php echo $this->Form->create('User', array('action' => 'add')); ?>
   <h2 class="form-signin-heading">User Registration</h2>
   <?php 
   	echo $this->Form->input('firstname', array('label' => 'First Name', 'id' => 'firstname','class'=>'form-control'));
