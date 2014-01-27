@@ -53,9 +53,17 @@ class UsersController extends AppController {
 
         		if ($this->request->is('post')) {
 
-        			$this->User->create();
+        			$user = array(
+					//'user_id' => //get this from the session,
+					'username' => $this->request->data['username'],
+					'firstname' => $this->request->data['firstname'],
+					'lastname' => $this->request->data['lastname'],
+					'password' => $this->request->data['password']
+					);
 
-        			if($this->User->save($this->request->data)) {
+					$createdSuccess = $this->User->save($user );
+
+        			if($createdSuccess) {
         				$this->Session->write('username',$this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
         				return $this->redirect(array('controller'=>'users', 'action' => 'login'));
@@ -87,11 +95,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user has been saved'));
 				return $this->redirect(array('action' => 'index'));
 
-			}else {
-
-				$this->Session->setFlash(__('The user could not be saved. Please try again'));
-
 			}
+				$this->Session->setFlash(__('The user could not be saved. Please try again'));
 
 		}else {
 
