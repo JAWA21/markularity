@@ -71,7 +71,7 @@ class UsersController extends AppController {
             			}else {
 
             				$this->Session->setFlash(__('Registration Successful!'));
-            				$this->login();
+            				$this->Auth->login($user);
 
             			}
 
@@ -152,7 +152,7 @@ class UsersController extends AppController {
 
 		if ($this->request->is('post')) {
 
-			$userAuth = $this->Auth->authenticate = array(
+			$this->Auth->authenticate = array(
 				'Form' => array(
 
 					'fields' => array('username' => 'username', 'password' =>'password')
@@ -162,13 +162,13 @@ class UsersController extends AppController {
 
 			$bool = true;
 
-			array_push($userAuth['Form'], $bool);
+			array_push($this->Auth->authenticate['Form'], $bool);
 
 			//Debugger::dump($userAuth);
 
 			//REDIRECT NOT WORKING 
 
-			if($userAuth['Form'][1] === true) {
+			if($this->Auth->authenticate['Form'][0] === true) {
 
 				$this->redirect($this->Auth->redirect(array(
 					'controller' => 'bookmarks',
@@ -197,8 +197,18 @@ class UsersController extends AppController {
 
 	public function logout() {
 
-		$this->Auth->logout();
-		//return $this->redirect();
+		// $this->redirect($this->Auth->redirect(array(
+		// 		'controller' => 'bookmarks',
+		// 		'action' => 'index'
+		// 		)
+		// 	)
+		// );
+		// $this->Auth->logout();
+		return $this->Auth->redirect(array(
+			'controller' => 'index',
+			'action' => 'index'
+			)
+		);
 
 	}
 
