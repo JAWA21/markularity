@@ -592,7 +592,7 @@ class AuthComponent extends Component {
  */
 	public function login($user = null) {
 		// echo '<pre>';
-		// var_dump($this->Session->read($this['User']['user_id']));
+		// var_dump($this->Session->read());
 		// echo '</pre>';
 
 		//var_dump($user);
