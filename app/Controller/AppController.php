@@ -48,7 +48,7 @@ class AppController extends Controller {
 			),
 			//'authorize' => array('Controller'),
 
-			//'fields' => array('username' => 'username', 'password' => 'password')
+			'fields' => array('username' => 'username', 'password' => 'password')
 
 		)
 	);
@@ -78,7 +78,7 @@ class AppController extends Controller {
 
 		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
 		$this->layout = 'admin';
-		$this->Auth->allow('index', 'view', 'login', 'register');
+		$this->Auth->allow('index', 'view', 'login', 'add');
 
 		$this->set('username', AuthComponent::user('username'));
 
