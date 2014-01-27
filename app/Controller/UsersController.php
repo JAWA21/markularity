@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('BookmarksController', 'Controller');
+
 /******************************
 *
 * UsersController
@@ -148,39 +150,55 @@ class UsersController extends AppController {
 
 	public function login(){
 
-
 		if ($this->request->is('post')) {
 
-		$this->layout = 'login';
-
-		$this->Auth->authenticate = array(
-			'Form' => array(
-
-				$user = array(
-					'username' => $this->request->data['User']['username'],
-					'password' =>  $this->request->data['User']['password'],
-					'role' => 'author'
-				)
-			)
-		);
-
-			$this->Auth->authenticate = array(
+			$userAuth = $this->Auth->authenticate = array(
 				'Form' => array(
 
-				'fields' => array('username' => 'username', 'password' =>'password')
+					'fields' => array('username' => 'username', 'password' =>'password')
 	   			)
 
 			);
 
-			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+			$bool = true;
+
+			array_push($userAuth['Form'], $bool);
+
+			//Debugger::dump($userAuth);
+
+			//REDIRECT NOT WORKING 
+
+			if($userAuth['Form'][1] === true) {
+
+				$this->redirect($this->Auth->redirect(array(
+					'controller' => 'bookmarks',
+					'action' => 'index'
+					)
+				));
+
+			}else {
+
+				$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+
+			}
+
+				
 
 		}
+		
+
+	} //End login()
+
+	public function loginView() {
+
+		$this->layout = 'login';
 
 	}
 
 	public function logout() {
 
-		return $this->redirect($this->Auth->logout());
+		$this->Auth->logout();
+		//return $this->redirect();
 
 	}
 
