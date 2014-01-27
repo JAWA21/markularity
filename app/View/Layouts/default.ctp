@@ -34,7 +34,7 @@ $title_for_layout = "Markularity";
 				<br>
 			</nav>
 
-	        <div class="jumbotron">
+	        <div class="content-wrapper">
 	            <?php echo $this -> fetch('content'); ?>
 	        </div>
 
