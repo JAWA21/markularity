@@ -160,11 +160,7 @@ class UsersController extends AppController {
 		        if ($this->Auth->login()) {
 
 		            return $this->redirect($this->Auth->redirect());
-<<<<<<< HEAD
 		            
-=======
-
->>>>>>> 3086c8bbee4907ccb2e00a9905665b55e5c2304b
 		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		            //$this->Session->setFlash(__('Success'));
 		        }
