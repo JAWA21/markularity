@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
-class BookmarksController extends Controller {
+class BookmarksController extends AppController {
 
 /**
  * Components
@@ -15,6 +15,9 @@ class BookmarksController extends Controller {
  * @var array
  */
 	public $components = array('Session');
+
+
+	//debug($this->Auth->User('user_id'));
 
 /**
  * index method
