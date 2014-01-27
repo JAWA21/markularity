@@ -28,8 +28,9 @@
 
 			<td>
 				thumb images
-				<img src="img/thumbsup.png">
-				<img src="img/thumbsdown.png">
+				<span class="glyphicon glyphicon-search"></span>
+				<a href="#" class="glyphicon glyphicon-thumbs-down"></a>
+				
 			</td>
 
 			<td>
