@@ -22,14 +22,14 @@ class UsersController extends AppController {
     		// Allow users to register, login, logout.
     		$this->Auth->allow('register', 'login', 'logout');
 
-	}
+	} //End beforeFilter()
 
 	public function index() {
 
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
 
-	}
+	} //End index()
 
 	public function view($id = null) {
 
@@ -41,7 +41,7 @@ class UsersController extends AppController {
 		}
 		$this->set('user', $this->User->read(null, $id));
 
-	}
+	} //End view()
 
 	public function profile(){
 
@@ -75,19 +75,9 @@ class UsersController extends AppController {
 
             			}
 
-            			
-            			// $this->Auth->loginAction(array(
-            			// 	'controller' => 'users',
-            			// 	'action' => 'login',
-            			// 	'plugin' => null
-            			// 	)
-            			// );
-
-            			// return $this->Auth->redirectUrl('bookmarks');
-
         		}
 
-    	}
+    	} //End register()
 
 	public function edit() {
 
@@ -122,7 +112,7 @@ class UsersController extends AppController {
 
 		}
 
-	}
+	} //End edit()
 
 	public function delete($id = null) {
 
@@ -146,7 +136,7 @@ class UsersController extends AppController {
 
 		}
 
-	}
+	} //End delete()
 
 	public function login(){
 
@@ -164,10 +154,6 @@ class UsersController extends AppController {
 
 			array_push($this->Auth->authenticate['Form'], $bool);
 
-			//Debugger::dump($userAuth);
-
-			//REDIRECT NOT WORKING 
-
 			if($this->Auth->authenticate['Form'][0] === true) {
 
 				$this->redirect($this->Auth->redirect(array(
@@ -182,8 +168,6 @@ class UsersController extends AppController {
 
 			}
 
-				
-
 		}
 		
 
@@ -193,23 +177,13 @@ class UsersController extends AppController {
 
 		$this->layout = 'login';
 
-	}
+	} //End loginView()
 
 	public function logout() {
 
-		// $this->redirect($this->Auth->redirect(array(
-		// 		'controller' => 'bookmarks',
-		// 		'action' => 'index'
-		// 		)
-		// 	)
-		// );
-		// $this->Auth->logout();
-		return $this->Auth->redirect(array(
-			'controller' => 'index',
-			'action' => 'index'
-			)
-		);
+		$this->Session->setFlash(__('You have successfully logged out. Goodbye.'));
+		return $this->redirect($this->Auth->logout());
 
-	}
+	} //End logout()
 
 }

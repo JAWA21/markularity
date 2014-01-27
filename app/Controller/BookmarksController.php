@@ -22,6 +22,7 @@ class BookmarksController extends Controller {
  */
 	public function index() {
 
+		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
