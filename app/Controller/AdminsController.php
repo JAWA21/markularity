@@ -36,10 +36,8 @@ class AdminsController extends Controller{
 		// $this->Bookmark->find('all');
 		// Debugger::dump($this);
 
-		$this->Bookmark->query("SELECT * FROM bookmarks;");
-		Debugger::dump($this);
-		
-
+		// $this->Bookmark->query("SELECT * FROM bookmarks;");
+		// Debugger::dump($this);
 
 	}
 
