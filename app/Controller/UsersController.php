@@ -58,7 +58,7 @@ class UsersController extends AppController {
         			if($this->User->save($this->request->data)) {
         				$this->Session->write('username',$this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
-        				return $this->redirect(array('controller'=>'Bookmarks', 'action' => 'index'));
+        				return $this->redirect(array('controller'=>'users', 'action' => 'login'));
 
         			}
         			$this->Session->setFlash(__('Information was not saved. Please try again.'));
@@ -135,6 +135,7 @@ class UsersController extends AppController {
 		            return $this->redirect($this->Auth->redirect());
 			
 	     	}
+	     }
 	     	
 	} //End login()
 
