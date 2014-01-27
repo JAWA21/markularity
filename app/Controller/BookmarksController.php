@@ -23,6 +23,8 @@ class BookmarksController extends Controller {
  */
 	public function index() {
 
+		var_dump($this->Auth->User('user_id'));
+
 		$this->layout = 'admin';
 
 		$username = $this->Session->read('Auth.Users.username');
