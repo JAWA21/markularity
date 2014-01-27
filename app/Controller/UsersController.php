@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('BookmarksController', 'Controller');
+
 /******************************
 *
 * UsersController
@@ -20,14 +22,14 @@ class UsersController extends AppController {
     		// Allow users to register, login, logout.
     		$this->Auth->allow('register', 'login', 'logout');
 
-	}
+	} //End beforeFilter()
 
 	public function index() {
 
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
 
-	}
+	} //End index()
 
 	public function view($id = null) {
 
@@ -39,7 +41,7 @@ class UsersController extends AppController {
 		}
 		$this->set('user', $this->User->read(null, $id));
 
-	}
+	} //End view()
 
 	public function profile(){
 
@@ -69,23 +71,13 @@ class UsersController extends AppController {
             			}else {
 
             				$this->Session->setFlash(__('Registration Successful!'));
-            				$this->login();
+            				$this->Auth->login($user);
 
             			}
 
-            			
-            			// $this->Auth->loginAction(array(
-            			// 	'controller' => 'users',
-            			// 	'action' => 'login',
-            			// 	'plugin' => null
-            			// 	)
-            			// );
-
-            			// return $this->Auth->redirectUrl('bookmarks');
-
         		}
 
-    	}
+    	} //End register()
 
 	public function edit() {
 
@@ -120,7 +112,7 @@ class UsersController extends AppController {
 
 		}
 
-	}
+	} //End edit()
 
 	public function delete($id = null) {
 
@@ -144,44 +136,54 @@ class UsersController extends AppController {
 
 		}
 
-	}
+	} //End delete()
 
 	public function login(){
 
-
 		if ($this->request->is('post')) {
-
-		$this->layout = 'login';
-
-		$this->Auth->authenticate = array(
-			'Form' => array(
-
-				$user = array(
-					'username' => $this->request->data['User']['username'],
-					'password' =>  $this->request->data['User']['password'],
-					'role' => 'author'
-				)
-			)
-		);
 
 			$this->Auth->authenticate = array(
 				'Form' => array(
 
-				'fields' => array('username' => 'username', 'password' =>'password')
+					'fields' => array('username' => 'username', 'password' =>'password')
 	   			)
 
 			);
 
-			$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+			$bool = true;
+
+			array_push($this->Auth->authenticate['Form'], $bool);
+
+			if($this->Auth->authenticate['Form'][0] === true) {
+
+				$this->redirect($this->Auth->redirect(array(
+					'controller' => 'bookmarks',
+					'action' => 'index'
+					)
+				));
+
+			}else {
+
+				$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
+
+			}
 
 		}
+		
 
-	}
+	} //End login()
+
+	public function loginView() {
+
+		$this->layout = 'login';
+
+	} //End loginView()
 
 	public function logout() {
 
+		$this->Session->setFlash(__('You have successfully logged out. Goodbye.'));
 		return $this->redirect($this->Auth->logout());
 
-	}
+	} //End logout()
 
 }
