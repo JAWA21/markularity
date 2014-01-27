@@ -41,24 +41,6 @@ class UsersController extends AppController {
 
         		if ($this->request->is('post')) {
 
-<<<<<<< HEAD
-					$user = array(
-						'username' => $this->request->data['username'],
-						'password' =>  $this->request->data['password'],
-						'firstname' => $this->request->data['firstname'],
-						'lastname' => $this->request->data['lastname'],
-						'role' => 'author'
-					);
-
-        			$this->User->create();
-        			if ($this->User->save($this->request->data)) {
-
-            			$this->Session->setFlash(__('Registration Successful!'));
-            			return $this->redirect(array('action' => 'login'));
-
-        			}
-        			$this->Session->setFlash(__('Registration Was Not Successful. Please Try Again!'));
-=======
         			$user = array(
 				'username' => $this->request->data['User']['username'],
 				'password' =>  $this->request->data['User']['password'],
@@ -78,7 +60,6 @@ class UsersController extends AppController {
 
             			$this->Session->setFlash(__('Registration Successful!'));
             			$this->Auth->login();	
->>>>>>> e94acf0d568c455613bb61cc1026368f7c8bd576
 
         		}
 
