@@ -27,13 +27,12 @@ class BookmarksController extends Controller {
 
 		$username = $this->Session->read('Auth.Users.username');
 
-		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
 			),
 			'order' => array('rank' => 'desc'),
-			'limit' => 10,
+			'limit' => 10
 			))
 		);
 	}//end index
