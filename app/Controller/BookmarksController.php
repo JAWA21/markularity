@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
-class BookmarksController extends Controller {
+class BookmarksController extends AppController {
 
 /**
  * Components
@@ -16,12 +16,17 @@ class BookmarksController extends Controller {
  */
 	public $components = array('Session');
 
+
+	//debug($this->Auth->User('user_id'));
+
 /**
  * index method
  *	displays top 10 bookmarks
  * @return void
  */
 	public function index() {
+
+		//var_dump($this->Auth->User('user_id'));
 
 		$this->layout = 'admin';
 
