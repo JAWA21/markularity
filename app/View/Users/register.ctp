@@ -5,9 +5,8 @@
 *
 ************************ -->
 
-<!-- <h2>User Registration</h2> -->
 
-<div class='signin'>
+<div class='navbar-form'>
 <?php echo $this->Form->create('User', array('action' => 'register')); ?>
   <h2 class="form-signin-heading">User Registration</h2>
   <?php 
@@ -19,4 +18,16 @@
   	echo $this->Form->end('Register',array('class'=>'btn btn-lg btn-primary btn-block pull-right'));	
   	// <button id="regis_btn" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
  ?>
+</div>
+
+
+<div class="navbar-form navbar-right" style="margin-right: 0px;">
+	<?php echo $this->Form->create('User',array('action' => 'login','inputDefaults' => array('label' => false))); ?>
+	<div class="form-group">
+		<? echo $this->Form->input('email', array('placeholder' => 'email','class' => 'form-control')); ?>
+	</div>
+	<div class="form-group">
+		<? echo $this->Form->input('password', array('placeholder' => 'password','class' => 'form-control')); ?>
+	</div>
+		<?echo $this->Form->end($options);?>
 </div>

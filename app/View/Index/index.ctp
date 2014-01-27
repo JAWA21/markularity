@@ -17,7 +17,7 @@
 		</span>
 	</div> -->
 
-	<? var_dump($bookmarks);?>
+
 <h1 class='col-4'>Top 10 Bookmarks</h1>
 <div class="col-lg-12">
 	<div class="jumbotron">
