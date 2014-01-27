@@ -64,4 +64,3 @@ $title_for_layout = "Markularity";
 <?php echo $this->Session->flash(); ?>
 </body>
 </html>
-

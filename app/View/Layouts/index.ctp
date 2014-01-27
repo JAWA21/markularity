@@ -64,24 +64,3 @@ $title_for_layout = "Markularity";
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

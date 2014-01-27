@@ -14,7 +14,21 @@ class IndexController extends AppController{
     }
 
     public function clickThru(){
+    	$this->layout = 'index';
 
+
+    }
+
+    public function thumbUp(){
+    	$this->layout = 'index';
+
+
+    }
+
+    public function thumbDown(){
+    	$this->layout = 'index';
+
+    	
     }
 
 

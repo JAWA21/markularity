@@ -13,7 +13,7 @@ class index extends AppModel{
 	public function topTen(){
 		//$this->setSource('bookmarks'); //set the table being used
 
-		$query = $this->find('all', array('order'=>'bookmark_id DESC'));
+		$query = $this->find('all', array('order'=>'rank DESC', 'limit' => 10));
 		//$query->select(['bookmark_id', 'title']);
 		return $query;
 
