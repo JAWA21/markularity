@@ -23,7 +23,9 @@ class BookmarksController extends Controller {
  */
 	public function index() {
 
-		$this->layout = 'bookmarks';
+		var_dump($this->Auth->User('user_id'));
+
+		$this->layout = 'admin';
 
 		$username = $this->Session->read('Auth.Users.username');
 
@@ -47,6 +49,9 @@ class BookmarksController extends Controller {
  */
 	//would I still need the user Id to get their stuff
 	public function view($user_id = null) {
+		
+		$this->layout = 'admin';
+		
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
@@ -63,6 +68,8 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function add() {
+		
+		$this->layout = 'admin';
 
 		if ($this->request->is('post')) {
 
@@ -91,6 +98,9 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function edit($bookmark_id = null) {
+		
+		$this->layout = 'admin';
+		
 		if(!$bookmark_id) {
 			throw new NotFoundException(__('Invalid Bookmark'));
 		}
@@ -121,6 +131,8 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function delete($id = null) {
+		
+		$this->layout = 'admin';
 
 		$this->Bookmark->id = $id;
 		if (!$this->Bookmark->exists()) {

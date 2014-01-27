@@ -54,14 +54,13 @@ class UsersController extends AppController {
 
 	public function add() {
 
-				$this->layout = 'register';
-
         		if ($this->request->is('post')) {
 
         			$this->User->create();
 
         			if($this->User->save($this->request->data)) {
-
+        				$this->Session->write('username',$this->request->data['User']['firstname']);
+        				// var_dump($this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
         				return $this->redirect(array('controller'=>'Bookmarks', 'action' => 'index'));
 
@@ -156,7 +155,6 @@ class UsersController extends AppController {
 
 	public function login(){
 
-		$this->layout = 'login';
 		if ($this->request->is('post')) {
 
 		        if ($this->Auth->login()) {
@@ -200,8 +198,6 @@ class UsersController extends AppController {
 	} //End login()
 
 	// public function loginView() {
-
-	// 	$this->layout = 'login';
 
 	// } //End loginView()
 

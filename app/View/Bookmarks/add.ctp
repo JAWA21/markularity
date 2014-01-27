@@ -67,20 +67,5 @@
 		<li>
 			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add')); ?>
 		</li>
-		<li>
-			<h3>Categories</h3>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Categories'), array(
-					'controller' => 'categories',
-					'action' => 'index',
-			)); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Add Category'), array(
-					'controller' => 'categories',
-					'action' => 'add',
- 			)); ?>
-		</li>
 	</ul>
 </div>
