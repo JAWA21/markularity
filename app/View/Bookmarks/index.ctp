@@ -18,7 +18,7 @@
 			</td>
 
 			<td>
-				<?php echo $bookmark['Bookmark']['bookmark_category_id']; ?>
+				<?php echo $bookmark['Bookmark']['category']; ?>
 			</td>
 
 			<td>
@@ -26,9 +26,11 @@
 			</td>
 
 			<td>
-				thumb images
-				<img src="img/thumbsup.png">
-				<img src="img/thumbsdown.png">
+				<?php echo $this->Html->link('Thumbs up', array('controller' => 'thumbs',
+					'action' => 'thumbsup')); ?>
+				|
+				<?php echo $this->Html->link('Thumbs down', array('controller' => 'thumbs',
+					'action' => 'thumbsdown')); ?>
 			</td>
 		</tr>
 		<?php endforeach; ?>

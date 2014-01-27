@@ -136,7 +136,7 @@ class BookmarksController extends Controller {
 			$this->Session->setFlash(__('The bookmark could not be deleted. Please, try again.'));
 
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'view'));
 
 	}
 	
