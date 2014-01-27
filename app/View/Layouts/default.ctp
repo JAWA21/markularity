@@ -5,21 +5,21 @@ $title_for_layout = "Markularity";
 <html>
 	<head>
 		<?php
-		echo $this -> Html -> charset();
+			echo $this -> Html -> charset();
 		?>
 		<title><?php echo $title_for_layout; ?></title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<?php
-		echo $this -> Html -> meta('icon');
-
-		echo $this -> Html -> script('bootstrap.js');
-
-		echo $this -> Html -> css('bootstrap.css');
-
-		echo $this -> fetch('meta');
-		echo $this -> fetch('css');
-		echo $this -> fetch('script');
-	?>
+			echo $this -> Html -> meta('icon');
+	
+			echo $this -> Html -> script('bootstrap.js');
+	
+			echo $this -> Html -> css('bootstrap.css');
+	
+			echo $this -> fetch('meta');
+			echo $this -> fetch('css');
+			echo $this -> fetch('script');
+		?>
 	</head>
 	<body>
 
