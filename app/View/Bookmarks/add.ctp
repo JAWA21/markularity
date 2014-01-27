@@ -7,7 +7,7 @@
 		echo $this->Form->input('title');
 		echo $this->Form->input('url');
 
-		echo $this->Form->input('Category', array(
+		echo $this->Form->input('category', array(
 			'type' => 'select',
 			'options' => array(
 					'Sports',
