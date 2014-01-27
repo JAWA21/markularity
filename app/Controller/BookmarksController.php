@@ -23,7 +23,7 @@ class BookmarksController extends Controller {
  */
 	public function index() {
 
-		$this->layout = 'bookmarks';
+		$this->layout = 'admin';
 
 		$username = $this->Session->read('Auth.Users.username');
 
