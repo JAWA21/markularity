@@ -21,24 +21,7 @@ class AdminsController extends Controller{
 	public function index() {
 		$this->layout = 'admin';
 
-		// $this->set('title_for_layout', 'This is the page title');
-		// $this->set('bookmarks', $this->Bookmark->find('all', array(
-		// 	'conditions' => array(
-		// 		'flag' => false,
-		// 	),
-		// 	'order' => array('rank' => 'desc'),
-		// 	'limit' => 10,
-		// 	))
-		// );
-		// $bookmarks = $this->Admins->Bookmark->find('all');
-		// Debugger::dump($bookmarks);
-		// $this->set('bookmarks', $bookmarks);
-
-		// $bookmarks = $this->Bookmark->find('all');
-		// Debugger::dump($bookmarks);
-
-		$bookmarks = $this->Bookmark->query("SELECT * FROM bookmarks;");
-		Debugger::dump($bookmarks);
+		//$this->set('bookmarks', $this->Admin->topTen());
 
 	}
 
