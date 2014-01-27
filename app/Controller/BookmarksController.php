@@ -22,7 +22,11 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function index() {
+
 		$this->layout = 'bookmarks';
+
+		$username = $this->Session->read('Auth.Users.username');
+
 		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
@@ -137,7 +141,7 @@ class BookmarksController extends Controller {
 			$this->Session->setFlash(__('The bookmark could not be deleted. Please, try again.'));
 
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'view'));
 
 	}
 	

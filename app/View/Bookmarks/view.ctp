@@ -19,7 +19,7 @@
 			</td>
 
 			<td>
-				<?php echo $bookmark['Bookmark']['bookmark_category_id']; ?>
+				<?php echo $bookmark['Bookmark']['category']; ?>
 			</td>
 
 			<td>
