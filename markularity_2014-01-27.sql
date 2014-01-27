@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.29)
+# Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: markularity
-# Generation Time: 2014-01-27 19:56:52 +0000
+# Generation Time: 2014-01-27 21:34:18 +0000
 # ************************************************************
 
 
@@ -29,7 +29,7 @@ CREATE TABLE `bookmarks` (
   `bookmark_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(100) DEFAULT NULL,
   `title` varchar(30) DEFAULT NULL,
-  `category` int(10) DEFAULT NULL,
+  `category` varchar(125) DEFAULT NULL,
   `date_submitted` datetime DEFAULT NULL,
   `user_id` int(11) unsigned DEFAULT NULL,
   `flag` tinyint(1) NOT NULL DEFAULT '0',
@@ -45,14 +45,13 @@ LOCK TABLES `bookmarks` WRITE;
 
 INSERT INTO `bookmarks` (`bookmark_id`, `url`, `title`, `category`, `date_submitted`, `user_id`, `flag`, `click`, `rank`)
 VALUES
-	(1,'smalldog.com','Small Dog Electronics',2,'2014-01-22 00:00:00',4,0,NULL,1),
-	(2,'cakephp.org','CakePHP - build web apps fast',10,'2014-01-22 00:00:00',4,0,NULL,0),
-	(3,'polygon.com','Polygon',6,'2014-01-27 00:00:00',19,0,NULL,3),
-	(4,'behance.net','Behance',7,'2014-01-27 00:00:00',19,0,NULL,4),
-	(5,'creattica.com','Creattica',7,'2014-01-27 00:00:00',19,0,NULL,5),
-	(6,'facebook.com','Facebook',2,'2014-01-27 00:00:00',19,0,NULL,11),
-	(7,'coderwall.com','Coder Wall',11,'2014-01-27 00:00:00',19,0,NULL,15),
-	(8,'google.com','Google',2,'2014-01-27 00:00:00',4,0,NULL,20);
+	(1,'smalldog.com','Small Dog Electronics','Tech','2014-01-22 00:00:00',4,0,NULL,NULL),
+	(2,'cakephp.org','CakePHP - build web apps fast','Geekery','2014-01-22 00:00:00',4,0,NULL,NULL),
+	(3,'www.facebook.com','procrastination','Humor',NULL,18,0,NULL,NULL),
+	(4,'google.com','Knowledge','Educational','0000-00-00 00:00:00',18,0,NULL,NULL),
+	(5,'cokeandpopcorn.ch','Binge watch tv shows','Movies','0000-00-00 00:00:00',18,0,NULL,NULL),
+	(9,'http://www.psychologytoday.com/','Psychology','Psychology','0000-00-00 00:00:00',18,0,NULL,NULL),
+	(10,'http://www.bandsintown.com/home','Tours','Music','0000-00-00 00:00:00',18,0,NULL,NULL);
 
 /*!40000 ALTER TABLE `bookmarks` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -89,9 +88,7 @@ VALUES
 	(13,'Literature'),
 	(14,'Automobiles'),
 	(15,'Motorcycles'),
-	(16,'News'),
-	(17,'testing'),
-	(18,'testing edited');
+	(16,'News');
 
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -196,8 +193,7 @@ VALUES
 	(16,'adsfasdf','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
 	(17,'adsfasdf','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
 	(18,'tkerick@fake.com','3489e355a6e3625b0dcb674955a296ff1a251e51','Tatiana','Kerick','author'),
-	(19,'flash03','ef6af50704e1b7ceac5be7d1a7def4c50b5ca7d2','flash','anderson','author'),
-	(20,'scat','ef6af50704e1b7ceac5be7d1a7def4c50b5ca7d2','flash04','anderson','author');
+	(19,'nkerick23@yahoo.com','3489e355a6e3625b0dcb674955a296ff1a251e51','Natasha','Kerick','author');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
