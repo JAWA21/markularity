@@ -1,7 +1,7 @@
 <!-- ************************
 *
 * Register View
-* File Location: app/View/Users/register.ctp 
+* File Location: app/View/Users/add.ctp 
 *
 ************************ -->
 
@@ -14,7 +14,7 @@
   <?php 
   	echo $this->Form->input('firstname', array('label' => 'First Name', 'id' => 'firstname','class'=>'form-control'));
 	echo $this->Form->input('lastname', array('label' => 'Last Name', 'id' => 'lastname','class'=>'form-control'));
-	echo $this->Form->input('email', array('label' => 'Email Address', 'id' => 'email','class'=>'form-control'));
+	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control'));
 	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control'));
 	echo $this->Form->hidden('role', array('value' => 'author'));
   	echo $this->Form->end('Register',array('class'=>'btn btn-lg btn-primary btn-block pull-right'));	

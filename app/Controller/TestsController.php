@@ -6,8 +6,6 @@ class TestsController extends Controller {
 
 	public function index() {
 
-		Debug($this -> Session -> read('user'));
-
 	}
 
 }
