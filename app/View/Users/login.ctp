@@ -13,8 +13,8 @@
 <?php echo '<small>Your username is the email address used when you registered.</small>' ?>
 
 <?php 
-	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username'));
-	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password'));
+	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control'));
+	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control'));
 ?>
 
 <?php echo $this->Form->end(__('Login')); ?>
