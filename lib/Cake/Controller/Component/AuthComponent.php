@@ -591,8 +591,14 @@ class AuthComponent extends Component {
  * @link http://book.cakephp.org/2.0/en/core-libraries/components/authentication.html#identifying-users-and-logging-them-in
  */
 	public function login($user = null) {
-		$this->_setDefaults();
+		// echo '<pre>';
+		// var_dump($this->Session->read($this['User']['user_id']));
+		// echo '</pre>';
 
+		//var_dump($user);
+
+		//echo $this->$user['User']['user_id'];
+		$this->_setDefaults();
 		if (empty($user)) {
 			$user = $this->identify($this->request, $this->response);
 		}

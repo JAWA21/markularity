@@ -21,7 +21,7 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function index() {
-
+		$username = $this->Session->read('Auth.Users.username');
 		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
