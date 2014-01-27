@@ -4,6 +4,7 @@ App::uses('AppController', 'Controller');
  * Bookmarks Controller
  *
  * @property Bookmark $Bookmark
+ * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
 class BookmarksController extends Controller {
@@ -21,7 +22,11 @@ class BookmarksController extends Controller {
  * @return void
  */
 	public function index() {
+
+		$this->layout = 'bookmarks';
+
 		$username = $this->Session->read('Auth.Users.username');
+
 		$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
@@ -68,16 +73,15 @@ class BookmarksController extends Controller {
 			if ($this->Bookmark->save($this->request->data)) {
 
 				$this->Session->setFlash(__('The bookmark has been saved.'));
-				return $this->redirect(array('action' => 'view'));
+				return $this->redirect(array('action' => 'index'));
 
 			} else {
+
 				$this->Session->setFlash(__('The bookmark could not be saved. Please, try again.'));
+
 			}
+
 		}
-	}//end add
-
-		public function profile(){
-
 	}
 
 /**
@@ -139,6 +143,25 @@ class BookmarksController extends Controller {
 		}
 		return $this->redirect(array('action' => 'view'));
 
-	}
-	
+	}//end delete
+
+/**
+ * clickThrough method
+ *
+ *@param int $bookmark_id
+ *takes the id passed through, gets the link, add the point, redirect in new tab
+ */
+	public function clickThrough($bookmark_id) {
+		//from id, get the url from query
+		//add point from clickthrough
+		//new tab to url
+
+		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
+		$url =  $query['Bookmark']['url'];
+
+		$this->redirect('http://www.' . $url);
+		
+
+	}//end clickThrough
+
 }
