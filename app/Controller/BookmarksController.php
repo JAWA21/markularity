@@ -175,10 +175,12 @@ class BookmarksController extends AppController {
  *@param int $bookmark_id
  *takes the id passed through, gets the link, add the point, redirect in new tab
  */
-	public function clickThru($bookmark_id) {
+	public function clickThrough($bookmark_id) {
 		//from id, get the url from query
 		//add point from clickthrough
 		//new tab to url
+
+		
 
 		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
 		$url =  $query['Bookmark']['url'];
