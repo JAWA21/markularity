@@ -27,8 +27,7 @@
 			</td>
 
 			<td>
-				thumb images
-				<span class="glyphicon glyphicon-search"></span>
+				<a href="#" class="glyphicon glyphicon-thumbs-up"></a>
 				<a href="#" class="glyphicon glyphicon-thumbs-down"></a>
 				
 			</td>
