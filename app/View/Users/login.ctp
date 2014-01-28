@@ -18,7 +18,6 @@ $options = array(
 
 <div class="container">
 	<div class="form-signin">
-		<?php echo $this->Form->create('User'); ?>
 		<div class="centered">
 			<h2>User Login</h2>
 			<?php echo '<small>Please enter your username and password</small><br>'; ?>
