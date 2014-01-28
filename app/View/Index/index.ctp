@@ -18,12 +18,12 @@
 	</div> -->
 
 
-<h1 class='col-4'>Top 10 Bookmarks</h1>
+<h1 class='col-4 page-header'>Top 10 Bookmarks</h1>
 <div class="col-lg-12">
 	<div class="jumbotron">
-		<div class="row">
-			<table>
-		<tr>
+		<!-- <div class="panel panel-default"> -->
+			<table class="table">
+		<tr class="col-lg-5">
 			<th>Bookmarks</th>
 			<th>Visit</th>
 			<th>Vote</th>
@@ -32,7 +32,9 @@
 		<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
 			<td>
-				<?php echo $bookmark['Index']['title']; ?>
+				<a href="#"> <!-- href="/Thumbs/clickThru" -->
+					<?php echo $bookmark['Index']['title']; ?>
+				</a>
 			</td>
 			<td>
 				<?php
@@ -43,17 +45,10 @@
 				?>
 			</td>
 			<td>
-				<?php
-					echo $this->Html->link(
-						'Up',
-						array('action' => 'thumbUp')
-					);
 
-					echo $this->Html->link(
-						'Down',
-						array('action' => 'thumbDown')
-					);
-				?>
+				<a class="glyphicon glyphicon-thumbs-up" href="#"></a> <!--href="#/Thumbs/thumUp"-->
+				<a class="glyphicon glyphicon-thumbs-down" href="#"></a> <!--href="/Thumbs/thumDwn"-->
+				
 			</td>
 		</tr>
 		<?php endforeach; ?>

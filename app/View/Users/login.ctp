@@ -10,11 +10,10 @@
 
 <h2>User Login</h2>
 <?php echo '<small>Please enter your username and password</small><br>'; ?>
-<?php echo '<small>Your username is the email address used when you registered.</small>' ?>
 
 <?php 
 	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control'));
 	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control'));
 ?>
-
-<?php echo $this->Form->end(__('Login')); ?>
+<input type="submit" class=" submit btn btn-lg btn-primary btn-block" value="Login">
+<?php echo $this->Form->end(); ?>

@@ -5,9 +5,11 @@ $title_for_layout = "Markularity";
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<?php echo $this -> Html -> charset(); ?>
-		<title>Administrator | <?php echo $title_for_layout; ?></title>
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<title>Add | <?php echo $title_for_layout; ?></title>
+
 		<?php
 		echo $this -> Html -> meta('icon');
 

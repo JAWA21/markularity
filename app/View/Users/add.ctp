@@ -16,8 +16,8 @@
 	echo $this->Form->input('lastname', array('label' => 'Last Name', 'id' => 'lastname','class'=>'form-control'));
 	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control'));
 	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control'));
-	echo $this->Form->hidden('role', array('value' => 'author'));
-  	echo $this->Form->end('Register',array('class'=>'btn btn-lg btn-primary btn-block pull-right'));	
-  	// <button id="regis_btn" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
- ?>
+	echo $this->Form->hidden('role', array('value' => 'author'));?>
+	<input type="submit" id="regis_btn" class="btn btn-lg btn-primary btn-block" value="Register"><?
+  	echo $this->Form->end();	?>
+ 	
 </div>

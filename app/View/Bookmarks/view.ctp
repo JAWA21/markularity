@@ -1,14 +1,16 @@
 <div class="bookmarks view">
 	<h2><?php echo __('Your Bookmarks'); ?></h2>
 	
-	<table>
-		<tr>
-			<th>Bookmark</th>
-			<th>Category</th>
-			<th>Rank</th>
-			<th>Thumbs</th>
-			<th>Actions</th>
-		</tr>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Bookmark</th>
+				<th>Category</th>
+				<th>Rank</th>
+				<th>Thumbs</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
 
 		<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
