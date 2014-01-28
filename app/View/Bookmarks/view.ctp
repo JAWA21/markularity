@@ -27,9 +27,9 @@
 			</td>
 
 			<td>
-				thumb images
-				<img src="img/thumbsup.png">
-				<img src="img/thumbsdown.png">
+				<a href="#" class="glyphicon glyphicon-thumbs-up"></a>
+				<a href="#" class="glyphicon glyphicon-thumbs-down"></a>
+				
 			</td>
 
 			<td>
