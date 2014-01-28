@@ -11,18 +11,6 @@ $options = array(
 	'div' => 'form-group',
 	'class' => 'btn btn-lg btn-primary btn-block'
 );
-
-<<<<<<< HEAD
-<h2>User Login</h2>
-<?php echo '<small>Please enter your username and password</small><br>'; ?>
-
-<?php 
-	echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control'));
-	echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control'));
-?>
-<input type="submit" class=" submit btn btn-lg btn-primary btn-block" value="Login">
-<?php echo $this->Form->end(); ?>
-=======
 	echo $this->Session->flash('auth');
 	echo $this->Form->create('User');
 ?>
@@ -40,7 +28,7 @@ $options = array(
 		<div class="form-group">
 			<?php echo $this->Form->input('password', array('label' => 'Password', 'id' => 'password','class'=>'form-control')); ?>
 		</div>
-	<?php echo $this->Form->end($options);?>
+		<input type="submit" class=" submit btn btn-lg btn-primary btn-block" value="Login">
+	<?php echo $this->Form->end();?>
 	</div>
 </div>
->>>>>>> 1e915238cee5ec0c5b4d6c047661f9c26d3adc73

@@ -45,10 +45,6 @@ class UsersController extends AppController {
 
 	} //End view()
 
-	public function profile(){
-
-	}
-
 	public function  add() {
 				//var_dump($this->request->data);
 

@@ -1,6 +1,6 @@
 <div class="bookmarks index">
 <h1>Welcome <?php echo $_SESSION['Auth']['User']['firstname'];?>!</h1>
-<?php var_dump($_SESSION);?>
+
 	<h2><?php echo __('Top 10 Bookmarks'); ?></h2>
 	<table class="table">
 		<thead>

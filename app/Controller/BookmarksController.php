@@ -59,6 +59,7 @@ class BookmarksController extends AppController {
 		$this->set('bookmarks', $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
+				'user_id' => $this->Auth->User('user_id'),
 			),
 			'order' => array('rank' => 'desc'),
 			'limit' => 10,
