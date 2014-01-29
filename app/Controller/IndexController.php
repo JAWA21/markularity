@@ -5,6 +5,14 @@ class IndexController extends AppController{
 
     public $helpers = array('Html', 'Form');
 
+    public function beforeFilter() {
+
+                    parent::beforeFilter();
+
+                    $this->Auth->allow('index');
+                    
+        }     
+
     public function index() {
     	//$bookmarks = $this->Index->topTen();
 

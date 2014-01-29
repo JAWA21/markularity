@@ -31,6 +31,8 @@ class BookmarksController extends AppController {
 
                     parent::beforeFilter();
 
+                    $this->Auth->allow('clickThrough');
+
                     if(!$this->Auth->loggedIn()) {
 
                             $this->Auth->deny(array('action' => 'index'));
