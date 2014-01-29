@@ -18,7 +18,6 @@ App::uses('BookmarksController', 'Controller');
 class UsersController extends AppController {
 
 	var $name = 'Users';
-	//var $components = array('Auth');
 
 	public function beforeFilter() {
 
@@ -77,7 +76,6 @@ class UsersController extends AppController {
 	public function edit() {
 
 		// validate they are logged in
-
 		if($this->request->is('post') || $this->request->is('put')) {
 
 			$user = array(

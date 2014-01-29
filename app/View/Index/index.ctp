@@ -23,11 +23,12 @@
 	<div class="jumbotron">
 		<!-- <div class="panel panel-default"> -->
 			<table class="table">
-		<tr class="col-lg-5">
-			<th>Bookmarks</th>
-			<th>Rank</th>
-		</tr>
-
+			
+				<tr class="col-lg-5">
+					<th>Bookmarks</th>
+					<th>Rank</th>
+				</tr>
+		
 		<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
 			<td>
