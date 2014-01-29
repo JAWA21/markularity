@@ -33,8 +33,8 @@
 			</td>
 
 			<td>
-				<a class="glyphicon glyphicon-thumbs-up" href="#"></a> <!--href="#/Thumbs/thumUp"-->
-				<a class="glyphicon glyphicon-thumbs-down" href="#"></a> <!--href="/Thumbs/thumDwn"-->
+				<a href="/Bookmarks/thumbUp/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-up"></a>
+				<a href="/Bookmarks/thumbDown/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-down"></a>
 			</td>
 		</tr>
 		<?php endforeach; ?>

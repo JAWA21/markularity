@@ -1,0 +1,1 @@
+<p>Congrats!</p><a href="/Bookmarks"> View your bookmarks</a>

@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.29)
+# Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: markularity
-# Generation Time: 2014-01-29 00:55:27 +0000
+# Generation Time: 2014-01-28 23:10:42 +0000
 # ************************************************************
 
 
@@ -108,15 +108,6 @@ CREATE TABLE `click_throughs` (
   PRIMARY KEY (`click_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `click_throughs` WRITE;
-/*!40000 ALTER TABLE `click_throughs` DISABLE KEYS */;
-
-INSERT INTO `click_throughs` (`click_id`, `bookmark_id`, `clicked_user_id`, `click_amount`)
-VALUES
-	(1,5,20,0);
-
-/*!40000 ALTER TABLE `click_throughs` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table point_type
@@ -177,43 +168,6 @@ VALUES
 	(1,1,5,3);
 
 /*!40000 ALTER TABLE `pointTypes` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table thumbs
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `thumbs`;
-
-CREATE TABLE `thumbs` (
-  `thumb_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `bookmark_id` int(11) DEFAULT NULL,
-  `thumbed_user_id` int(11) DEFAULT NULL,
-  `thumbed` tinyint(1) DEFAULT NULL,
-  `thumbed_amount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`thumb_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `thumbs` WRITE;
-/*!40000 ALTER TABLE `thumbs` DISABLE KEYS */;
-
-INSERT INTO `thumbs` (`thumb_id`, `bookmark_id`, `thumbed_user_id`, `thumbed`, `thumbed_amount`)
-VALUES
-	(1,3,20,1,NULL),
-	(2,3,20,1,NULL),
-	(3,5,20,1,NULL),
-	(4,5,20,1,NULL),
-	(5,5,20,1,NULL),
-	(6,5,20,1,NULL),
-	(7,5,20,1,NULL),
-	(8,3,20,1,NULL),
-	(9,3,20,1,NULL),
-	(10,3,20,1,NULL),
-	(11,5,20,1,NULL),
-	(12,5,20,1,NULL),
-	(13,3,20,1,NULL);
-
-/*!40000 ALTER TABLE `thumbs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

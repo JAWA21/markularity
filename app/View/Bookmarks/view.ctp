@@ -29,8 +29,8 @@
 			</td>
 
 			<td>
-				<a href="#" class="glyphicon glyphicon-thumbs-up"></a>
-				<a href="#" class="glyphicon glyphicon-thumbs-down"></a>
+				<a href="/Bookmarks/thumbUp/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-up"></a>
+				<a href="/Bookmarks/thumbDown/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-down"></a>
 				
 			</td>
 

@@ -1,6 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
 App::uses('ClickThrough', 'Model');
+App::uses('Thumbs', 'Model');
 
 /**
  * Bookmarks Controller
@@ -221,5 +222,64 @@ class BookmarksController extends AppController {
 		
 
 	}//end clickThrough
+
+	public function thumbUp($bookmark_id) {
+
+		$this->loadModel('Thumbs');
+
+		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
+		$url =  $query['Bookmark']['url'];
+
+		//have to figure out how to get the session
+		$user_id = 0;
+		if($this->Auth->loggedIn()) {
+			$user_id = $this->Auth->User('user_id');
+		}
+
+		$thumbed = array(
+			'bookmark_id' => $bookmark_id,
+			'thumbed_user_id' => $user_id,
+			'thumbed' => 1,
+		);
+
+		//$this->Thumb->create();
+
+		//if($this->Thumb->save($thumbed)){
+			 $this->redirect(array('action' => 'index'));
+		//}
+
+	}//end thumbUp
+
+	public function thumbDown($bookmark_id) {
+
+		$this->loadModel('Thumbs');
+
+		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
+		$url =  $query['Bookmark']['url'];
+
+		//have to figure out how to get the session
+		$user_id = 0;
+		if($this->Auth->loggedIn()) {
+			$user_id = $this->Auth->User('user_id');
+		}
+
+
+
+		$thumbed = array(
+			'bookmark_id' => $bookmark_id,
+			'thumbed_user_id' => $user_id,
+			'thumbed' => 0,
+			// 'thumbedAmount' => 
+		);
+
+		//$this->Thumb->create();
+
+		//if($this->Thumb->save($thumbed)){
+			 $this->redirect(array('action' => 'index'));
+		//}
+
+	}//end thumbUp
+
+
 
 }
