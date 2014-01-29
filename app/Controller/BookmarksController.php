@@ -48,19 +48,53 @@ class BookmarksController extends AppController {
 	public function index() {
 
 		//var_dump($this->Auth->User('user_id'));
+		$this->loadModel('Thumb');
+		$this->loadModel('ClickThrough');
 
 		$this->layout = 'admin';
 
-		$username = $this->Session->read('Auth.Users.username');
-
-		$this->set('bookmarks', $this->Bookmark->find('all', array(
+		$bookmarks = $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
 			),
-			'order' => array('rank' => 'desc'),
-			'limit' => 10
-			))
+			'order' => array('bookmark_id' => 'desc'),
+			'limit' => 20
+			)
 		);
+
+		foreach ($bookmarks as $bookmark) {
+
+			$clickthroughs = intval($this->ClickThrough->find('count', array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'])
+				)));
+
+			$thumbsUp = intval($this->Thumb->find('count', array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'],
+					'thumbed' => 'true')
+				)
+			));
+
+			$thumbsDown = intval($this->Thumb->find('count', 
+			array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'],
+					'thumbed' => 'false')
+			)
+			));
+
+			$total = ($thumbsUp * 5) + $clickthroughs - ($thumbsDown * 3);
+
+			$bookmark['Bookmark']['popularity'] = $total;
+
+			array_push($bookmarks, $bookmark);
+		}
+		
+		$this->set('bookmarks', $bookmarks);
+
+
+
 	}//end index
 
 /**
@@ -75,25 +109,50 @@ class BookmarksController extends AppController {
 	public function view($user_id = null) {
 		
 		$this->layout = 'admin';
+		$this->loadModel('Thumb');
+		$this->loadModel('ClickThrough');
 		
 		//pull just the users specific bookmarks
-		$this->set('bookmarks', $this->Bookmark->find('all', array(
+		$bookmarks = $this->Bookmark->find('all', array(
 			'conditions' => array(
 				'flag' => false,
 				'user_id' => $this->Auth->User('user_id'),
 			),
-			'order' => array('rank' => 'desc'),
-			'limit' => 10,
-			))
+			'order' => array('bookmark_id' => 'desc'),
+			'limit' => 20
+			)
 		);
 
-		// $this->set('bookmarks', $this->Bookmark->findByUserId($user_id, array(
-		// 	'conditions' => array(
-		// 		'flag' => false,
-		// 	),
-		// 	'order' => array('rank' => 'desc'),
-		// 	'limit' => 10,	
-		// )));
+		foreach ($bookmarks as $bookmark) {
+
+			$clickthroughs = intval($this->ClickThrough->find('count', array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'])
+				)));
+
+			$thumbsUp = intval($this->Thumb->find('count', array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'],
+					'thumbed' => 'true')
+				)
+			));
+
+			$thumbsDown = intval($this->Thumb->find('count', 
+			array(
+				'conditions' => array(
+					'bookmark_id' => $bookmark['Bookmark']['bookmark_id'],
+					'thumbed' => 'false')
+			)
+			));
+
+			$total = ($thumbsUp * 5) + $clickthroughs - ($thumbsDown * 3);
+
+			$bookmark['Bookmark']['popularity'] = $total;
+
+			array_push($bookmarks, $bookmark);
+		}
+		
+		$this->set('bookmarks', $bookmarks);
 	}
 
 /**

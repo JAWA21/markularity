@@ -6,7 +6,7 @@
 			<tr>
 				<th>Bookmark</th>
 				<th>Category</th>
-				<th>Rank</th>
+				<th>Popularity</th>
 				<th>Thumbs</th>
 				<th>Actions</th>
 			</tr>
@@ -25,7 +25,10 @@
 			</td>
 
 			<td>
-				<?php echo $bookmark['Bookmark']['rank']; ?>
+				<?php if(!isset($bookmark['Bookmark']['popularity'])){
+					echo '0';
+					}else
+					echo $bookmark['Bookmark']['popularity']; ?>
 			</td>
 
 			<td>
