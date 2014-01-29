@@ -15,7 +15,7 @@ $title_for_layout = "Markularity";
 
 		echo $this -> Html -> script('bootstrap.js');
 
-		echo $this -> Html -> css('bootstrap.css');
+		echo $this -> Html -> css(array('bootstrap.css','signin.css'));
 
 		echo $this -> fetch('meta');
 		echo $this -> fetch('css');
@@ -25,7 +25,7 @@ $title_for_layout = "Markularity";
 	<body>
 		
 	    <div class="container">
-	    		        
+	    	<br />
 	       <nav class="navbar navbar-default" role="navigation">
 				<a class="navbar-brand" href="/">Markularity</a>
 				<div class="navbar-form navbar-right" role="register">
@@ -38,10 +38,6 @@ $title_for_layout = "Markularity";
 	            <?php echo $this -> fetch('content'); ?>
 	        </div>
 	 
-	        <div id="footer">
-	            © <?php echo date("Y"); ?> - All rights          
-	    	</div>
-	    	
 	         <?php echo $this -> element('sql_dump'); ?>  
 	           
 	    </div>
