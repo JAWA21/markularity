@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.33)
+# Host: 127.0.0.1 (MySQL 5.5.29)
 # Database: markularity
-# Generation Time: 2014-01-29 14:38:03 +0000
+# Generation Time: 2014-01-29 17:38:36 +0000
 # ************************************************************
 
 
@@ -47,34 +47,18 @@ INSERT INTO `bookmarks` (`bookmark_id`, `url`, `title`, `category`, `date_submit
 VALUES
 	(1,'smalldog.com','Small Dog Electronics','Tech','2014-01-22 00:00:00',4,0,NULL,3),
 	(2,'cakephp.org','CakePHP - build web apps fast','Geekery','2014-01-22 00:00:00',4,0,NULL,5),
-	(3,'facebook.com','procrastination','Humor',NULL,18,0,NULL,10),
+	(3,'www.facebook.com','procrastination','Humor',NULL,18,0,NULL,10),
 	(4,'google.com','Knowledge','Educational','0000-00-00 00:00:00',18,0,NULL,6),
 	(5,'cokeandpopcorn.ch','Binge watch tv shows','Movies','0000-00-00 00:00:00',18,0,NULL,9),
-	(9,'psychologytoday.com','Psychology','Psychology','0000-00-00 00:00:00',18,0,NULL,7),
-	(10,'bandsintown.com/home','Tours','Music','0000-00-00 00:00:00',18,0,NULL,7),
-	(11,'weather.com/weather/hourbyhour/graph/Winter+Park+FL+32792:4:US','Winter Park Weather','Tech','0000-00-00 00:00:00',19,0,NULL,1);
+	(9,'http://www.psychologytoday.com/','Psychology','Psychology','0000-00-00 00:00:00',18,0,NULL,7),
+	(10,'http://www.bandsintown.com/home','Tours','Music','0000-00-00 00:00:00',18,0,NULL,7),
+	(11,'weather.com/weather/hourbyhour/graph/Winter+Park+FL+32792:4:US','Winter Park Weather','Tech','0000-00-00 00:00:00',19,0,NULL,1),
+	(12,'google.com','added','Sports','0000-00-00 00:00:00',20,0,NULL,NULL),
+	(13,'test.com','this','Sports','0000-00-00 00:00:00',20,0,NULL,NULL),
+	(14,'123.com','new bookmark','Sports','0000-00-00 00:00:00',20,0,NULL,NULL);
 
 /*!40000 ALTER TABLE `bookmarks` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-# Dump of table books
-# ------------------------------------------------------------
-
-DROP VIEW IF EXISTS `books`;
-
-CREATE TABLE `books` (
-   `bookmark_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
-   `url` VARCHAR(100) NULL DEFAULT NULL,
-   `title` VARCHAR(30) NULL DEFAULT NULL,
-   `category` VARCHAR(125) NULL DEFAULT NULL,
-   `date_submitted` DATETIME NULL DEFAULT NULL,
-   `user_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
-   `flag` TINYINT(1) NOT NULL DEFAULT '0',
-   `rank` INT(100) NULL DEFAULT NULL,
-   `click` INT(100) NULL DEFAULT NULL
-) ENGINE=MyISAM;
-
 
 
 # Dump of table categories
@@ -133,23 +117,12 @@ LOCK TABLES `click_throughs` WRITE;
 INSERT INTO `click_throughs` (`click_id`, `bookmark_id`, `clicked_user_id`, `click_amount`)
 VALUES
 	(1,5,20,0),
-	(2,3,25,0),
-	(3,5,25,0),
-	(4,3,25,0),
-	(5,9,25,0),
-	(6,10,25,0),
-	(7,1,25,0),
-	(8,3,25,0),
-	(9,5,25,0),
-	(10,9,0,0),
-	(11,10,0,0),
-	(12,3,0,0),
-	(13,3,0,0),
-	(14,5,0,0),
-	(15,10,0,0),
-	(16,10,0,0),
-	(17,3,0,0),
-	(18,5,0,0);
+	(2,3,0,0),
+	(3,5,0,0),
+	(4,3,20,0),
+	(5,14,20,0),
+	(6,11,20,0),
+	(7,14,20,0);
 
 /*!40000 ALTER TABLE `click_throughs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -248,7 +221,48 @@ VALUES
 	(11,5,20,1,NULL),
 	(12,5,20,1,NULL),
 	(13,3,20,1,NULL),
-	(14,3,26,1,NULL);
+	(17,3,20,1,NULL),
+	(18,3,20,1,NULL),
+	(19,3,20,1,NULL),
+	(20,3,20,1,NULL),
+	(21,3,20,1,NULL),
+	(22,3,20,1,NULL),
+	(23,3,20,1,NULL),
+	(24,3,20,1,NULL),
+	(27,3,20,1,NULL),
+	(28,3,20,1,NULL),
+	(29,3,20,1,NULL),
+	(30,3,20,1,NULL),
+	(31,3,20,1,NULL),
+	(32,3,20,1,NULL),
+	(35,3,20,1,NULL),
+	(36,3,20,1,NULL),
+	(37,3,20,1,NULL),
+	(38,3,20,1,NULL),
+	(39,3,20,1,NULL),
+	(40,3,20,1,NULL),
+	(41,9,20,1,NULL),
+	(42,9,20,1,NULL),
+	(43,9,20,1,NULL),
+	(44,9,20,1,NULL),
+	(45,12,20,1,NULL),
+	(46,12,20,1,NULL),
+	(47,14,20,1,NULL),
+	(48,13,20,1,NULL),
+	(49,12,20,1,NULL),
+	(50,11,20,1,NULL),
+	(51,10,20,1,NULL),
+	(52,10,20,1,NULL),
+	(53,9,20,1,NULL),
+	(54,5,20,1,NULL),
+	(55,4,20,1,NULL),
+	(56,3,20,1,NULL),
+	(57,2,20,1,NULL),
+	(58,2,20,1,NULL),
+	(59,13,20,1,NULL),
+	(60,5,20,1,NULL),
+	(61,9,20,1,NULL),
+	(62,9,20,1,NULL);
 
 /*!40000 ALTER TABLE `thumbs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -293,32 +307,12 @@ VALUES
 	(17,'adsfasdf','8c0d5eff10109fcca18627046209dbeb9bfdb924','sdafa','dsfadsf','author'),
 	(18,'tkerick@fake.com','3489e355a6e3625b0dcb674955a296ff1a251e51','Tatiana','Kerick','author'),
 	(19,'nkerick23@yahoo.com','3489e355a6e3625b0dcb674955a296ff1a251e51','Natasha','Kerick','author'),
-	(25,'me','38eeac4e3fa0dc7534a04fe80e182b324d6fc533','me','me',NULL),
-	(26,'blah','d64c4a31036ccb7003da0e10f2c1c364bd982de4','blah','blah',NULL);
+	(20,'flash03','ef6af50704e1b7ceac5be7d1a7def4c50b5ca7d2','Jeanna','A',NULL);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-
-
-# Replace placeholder table for books with correct view syntax
-# ------------------------------------------------------------
-
-DROP TABLE `books`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `books`
-AS SELECT
-   `b`.`bookmark_id` AS `bookmark_id`,
-   `b`.`url` AS `url`,
-   `b`.`title` AS `title`,
-   `b`.`category` AS `category`,
-   `b`.`date_submitted` AS `date_submitted`,
-   `users`.`user_id` AS `user_id`,
-   `b`.`flag` AS `flag`,
-   `b`.`rank` AS `rank`,
-   `b`.`click` AS `click`
-FROM (`bookmarks` `b` join `users` on((`users`.`user_id` = `b`.`user_id`)));
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
