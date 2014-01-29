@@ -76,12 +76,12 @@ class AppController extends Controller {
 
     		} 
 
-		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin')))
-		$this->layout = 'admin';
-		$this->Auth->allow('index', 'view', 'login', 'add', 'clickThrough');
+		if((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))) {
+			$this->layout = 'admin';
+			$this->Auth->allow('index', 'view', 'login', 'add', 'clickThrough');
 
-		$this->set('username', AuthComponent::user('username'));
-
+			$this->set('username', AuthComponent::user('username'));
+		}
 	}
 
 }
