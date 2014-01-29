@@ -40,6 +40,8 @@
 						array('class' => 'glyphicon glyphicon-thumbs-up')
 					);
 
+					echo "&#032"; //just here to space out the thumbs.
+
 					echo $this->Html->link(
 						'',
 						array('controller' => 'Bookmarks', 'action' => 'thumbDown', $bookmark['Bookmark']['bookmark_id']),
