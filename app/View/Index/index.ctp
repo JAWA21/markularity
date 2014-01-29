@@ -16,6 +16,7 @@
 <!-- <div class="col-lg-12"> -->
 	<div class="jumbotron">
 		<!-- <div class="panel panel-default"> -->
+
 		<table>
 		<tr>
 			<th>Bookmarks</th>
