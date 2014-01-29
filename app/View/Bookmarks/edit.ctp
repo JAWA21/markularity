@@ -47,7 +47,7 @@
 		//once reg/log working, how to get the user_id from session
 		echo $this->Form->input('user_id', array(
 				'type' => 'hidden',
-				'value' => 18,
+				'value' => $_SESSION['Auth']['User']['user_id'],
 			));
 	?>
 	</fieldset>

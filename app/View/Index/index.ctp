@@ -32,7 +32,7 @@
 		<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
 			<td>
-				<a href="#"> <!-- href="/Thumbs/clickThru" -->
+				<a href="#"> <!-- href="/Thumbs/clickThrough" -->
 					<?php echo $bookmark['Index']['title']; ?>
 				</a>
 			</td>
@@ -40,7 +40,7 @@
 				<?php
 					echo $this->Html->link(
 						'Visit',
-						array('action' => 'clickThru')
+						array('action' => 'clickThrough')
 					);
 				?>
 			</td>
