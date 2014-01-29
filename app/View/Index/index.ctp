@@ -22,7 +22,8 @@
 				<?php
 					echo $this->Html->link(
 						$bookmark['Index']['title'],
-						array('controller' => 'Bookmarks', 'action' => 'clickThrough', $bookmark['Index']['bookmark_id'])
+						array('controller' => 'Bookmarks', 'action' => 'clickThrough', $bookmark['Index']['bookmark_id']),
+						array('target' => '_blank')
 					);
 				?>
 			</td>
