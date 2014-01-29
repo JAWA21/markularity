@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('ClickThrough', 'Model');
+
 /**
  * Bookmarks Controller
  *
@@ -180,8 +182,23 @@ class BookmarksController extends AppController {
 		//add point from clickthrough
 		//new tab to url
 
+		$this->loadModel('ClickThrough');
+
 		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
 		$url =  $query['Bookmark']['url'];
+
+		//have to figure out how to get the session
+		$user_id = 0;
+		if($this->Auth->loggedIn()) {
+			$user_id = $this->Auth->User('user_id');
+		}
+
+		$clickThrough = array(
+			'bookmark_id' => $bookmark_id,
+			'clicked_user_id' => $user_id,
+		);
+
+		$this->ClickThrough->save($clickThrough);
 
 		$this->redirect('http://www.' . $url);
 		
