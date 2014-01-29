@@ -1,6 +1,6 @@
 <?php
 $btn_options = array(
-	'label' => 'Edit Bookmark',
+	'label' => 'Add Bookmark',
 	'div' => 'form-group',
 	'class' => 'btn btn-lg btn-primary btn-block'
 );
