@@ -4,6 +4,30 @@ padding-bottom:40px;
 background-color:#fff;
 }*/
 
+.bullets {
+	list-style-type: none;
+}
+
+.actions {
+	float:left;
+	width:16%;
+	padding:10px 1.5%;
+}
+
+.actions h3 {
+	padding-top:0;
+	color:#777;
+}
+
+.form,
+.index,
+.view {
+	float:right;
+	width:76%;
+	border-left:1px solid #666;
+	padding:10px 2%;
+}
+
 .centered { text-align: center }
 
 .form-signin {
