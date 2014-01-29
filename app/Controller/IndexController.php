@@ -1,5 +1,7 @@
 <?
 App::uses('AppController', 'Controller');
+App::uses('ClickThrough', 'Model');
+App::uses('Thumb', 'Model');
 
 class IndexController extends AppController{
 
@@ -15,25 +17,40 @@ class IndexController extends AppController{
 
     public function index() {
     	//$bookmarks = $this->Index->topTen();
+        $this->loadModel('Thumb');
+        $this->loadModel('ClickThrough');
 
-        if($this->Auth->login()){
-            $this->layout = 'admin';
+    	$bookmarks = $this->Index->topTen();
+
+        foreach ($bookmarks as $bookmark) {
+
+            $clickthroughs = intval($this->ClickThrough->find('count', array(
+                'conditions' => array(
+                    'bookmark_id' => $bookmark['Index']['bookmark_id'])
+                )));
+
+            $thumbsUp = intval($this->Thumb->find('count', array(
+                'conditions' => array(
+                    'bookmark_id' => $bookmark['Index']['bookmark_id'],
+                    'thumbed' => 'true')
+                )
+            ));
+
+            $thumbsDown = intval($this->Thumb->find('count', 
+            array(
+                'conditions' => array(
+                    'bookmark_id' => $bookmark['Index']['bookmark_id'],
+                    'thumbed' => 'false')
+            )
+            ));
+
+            $total = ($thumbsUp * 5) + $clickthroughs - ($thumbsDown * 3);
+
+            $bookmark['Bookmark']['popularity'] = $total;
+
+            array_push($bookmarks, $bookmark);
         }
         
-    	$this->set('bookmarks', $this->Index->topTen());
+        $this->set('bookmarks', $bookmarks);
     }
-
-    public function clickThru(){
-
-    }
-
-    public function thumbUp(){
-
-    }
-
-    public function thumbDown(){
-    	
-    }
-
-
 }

@@ -2,15 +2,7 @@
 
 ?>
 
-<!-- <h1>Tests Index</h1> -->
-<!-- <div class="col-lg-12"> -->
-<!-- 	<div class="input-group">
-		<input type="text" class="form-control">
-		<span class="input-group-btn">
-			<button class="btn btn-default" type="button">Go!</button>
-		</span>
-	</div> -->
-
+<div class="col-lg-12">
 
 <h1 class='col-4 page-header'>Top 10 Bookmarks</h1>
 <!-- <div class="col-lg-12"> -->
@@ -20,8 +12,8 @@
 		<table>
 		<tr>
 			<th>Bookmarks</th>
-			<th>Category</th>
-			<th>Rank</th>
+			<th>Popularity</th>
+
 		</tr>
 
 		<?php foreach ($bookmarks as $bookmark): ?>
@@ -35,17 +27,11 @@
 				?>
 			</td>
 			<td>
-				<?php echo $bookmark['Index']['category']; ?>
+				<?php if(!isset($bookmark['Bookmark']['popularity'])){
+					echo '0';
+					}else
+					echo $bookmark['Bookmark']['popularity']; ?>
 			</td>
-			<td>
-				<?php echo $bookmark['Index']['rank']; ?>
-			</td>
-			<!-- <td>
-
-				<a class="glyphicon glyphicon-thumbs-up" href="#"></a> 
-				<a class="glyphicon glyphicon-thumbs-down" href="#"></a> 
-				
-			</td> -->
 		</tr>
 		<?php endforeach; ?>
 	</table>
