@@ -27,6 +27,22 @@ class BookmarksController extends AppController {
  *	displays top 10 bookmarks
  * @return void
  */
+	public function beforeFilter() {
+
+                    parent::beforeFilter();
+
+                    if(!$this->Auth->loggedIn()) {
+
+                            $this->Auth->deny(array('action' => 'index'));
+
+                    }else {
+
+                            $this->Auth->allow(array('action' => 'index'));
+
+                    }
+                    
+        } //End beforeFilter()
+
 	public function index() {
 
 		//var_dump($this->Auth->User('user_id'));
