@@ -34,6 +34,8 @@ $title_for_layout = "Markularity";
 				<br>
 			</nav>
 
+			<?php echo $this->Session->flash('flash', array('element' => 'flash_notification')); ?>
+
 	        <div class="content-wrapper">
 	            <?php echo $this -> fetch('content'); ?>
 	        </div>
