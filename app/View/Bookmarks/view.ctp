@@ -29,8 +29,15 @@
 			</td>
 
 			<td>
-				<a href="#" class="glyphicon glyphicon-thumbs-up"></a>
-				<a href="#" class="glyphicon glyphicon-thumbs-down"></a>
+				<!-- <a href="/Thumbs/thumbUp/" class="glyphicon glyphicon-thumbs-up"></a>
+				<a href="/Thumbs/thumbDown" class="glyphicon glyphicon-thumbs-down"></a> -->
+
+				<?php 
+					echo $this->Html->link(
+						'thumbs up',
+						array('action' => 'thumbUp', $bookmark['Bookmark']['bookmark_id'])
+					);
+				?>
 				
 			</td>
 
