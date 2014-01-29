@@ -33,8 +33,19 @@
 			</td>
 
 			<td>
-				<a href="/Bookmarks/thumbUp/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-up"></a>
-				<a href="/Bookmarks/thumbDown/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-down"></a>
+				<?php 
+					echo $this->Html->link(
+						'',
+						array('action' => 'thumbUp', $bookmark['Bookmark']['bookmark_id']),
+						array('class' => 'glyphicon glyphicon-thumbs-up')
+					);
+
+					echo $this->Html->link(
+						'',
+						array('controller' => 'Bookmarks', 'action' => 'thumbDown', $bookmark['Bookmark']['bookmark_id']),
+						array('class' => 'glyphicon glyphicon-thumbs-down')
+					);
+				?>
 			</td>
 		</tr>
 		<?php endforeach; ?>
