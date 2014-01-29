@@ -1,15 +1,9 @@
-<?
-// ------------------------->>
-// 
-// 
-// FILE LOCATION: VIEW/INDEX/INDEX.CTP
-// 
-// 
-// 
-// <<-------------------------
+<?php
 
 ?>
-<div class="col-lg-12">
+
+<!-- <h1>Tests Index</h1> -->
+<!-- <div class="col-lg-12"> -->
 <!-- 	<div class="input-group">
 		<input type="text" class="form-control">
 		<span class="input-group-btn">
@@ -19,11 +13,11 @@
 
 
 <h1 class='col-4 page-header'>Top 10 Bookmarks</h1>
-<div class="col-lg-12">
+<!-- <div class="col-lg-12"> -->
 	<div class="jumbotron">
 		<!-- <div class="panel panel-default"> -->
-			<table class="table">
-		<tr class="col-lg-5">
+		<table>
+		<tr>
 			<th>Bookmarks</th>
 			<th>Rank</th>
 		</tr>
