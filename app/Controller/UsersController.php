@@ -24,6 +24,8 @@ class UsersController extends AppController {
 
     		parent::beforeFilter();
 
+    		$this->Auth->allow(array('action' => 'add'));
+
 	} //End beforeFilter()
 
 	public function index() {
@@ -60,6 +62,7 @@ class UsersController extends AppController {
 					$createdSuccess = $this->User->save($user );
 
         			if($createdSuccess) {
+
         				$this->Session->write('username',$this->request->data['User']['firstname']);
         				$this->Session->setFlash(__('Registration Successful!'));
         				return $this->redirect(array('controller'=>'users', 'action' => 'login'));
@@ -134,42 +137,9 @@ class UsersController extends AppController {
 		        if ($this->Auth->login()) {
 
 		            return $this->redirect($this->Auth->redirect());
-		            
-		            //$this->Session->setFlash(__('Welcome ' . $username . '! You have successfully logged in.'));
-		            //$this->Session->setFlash(__('Success'));
+		         
 		        }
 		        $this->Session->setFlash(__('Invalid username or password, try again'));
-
-			// $authResult = $this->Auth->authenticate = array(
-			// 	'Form' => array(
-
-			// 		'fields' => array('username' => 'test@test.com', 'password' =>'test')
-	  //  			)
-
-			// );
-			// Debugger::dump($authResult);
-
-			// $bool = true;
-
-			// array_push($this->Auth->authenticate['Form'], $bool);
-
-			// if($this->Auth->authenticate['Form'][0] === true) {
-
-			// 	$this->redirect($this->Auth->redirect(array(
-			// 		'controller' => 'bookmarks',
-			// 		'action' => 'index'
-			// 		)
-			// 	));
-
-			// }else {
-
-			// 	$this->Session->setFlash(__('Invalid username and/or password. Please try again'));
-
-			// }
-
-		// }
-		
-			
 	     	}
 	     	
 	} //End login()
