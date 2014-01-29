@@ -5977,17 +5977,4 @@ td.visible-print {
   }
 }
 
-/*
-CUSTOM CSS
-================================== */
-#authMessage, .notification {
-  background: firebrick;
-  padding: 10px;
-  text-align: center;
-  font-size: 20px;
-  color: white;
-  -webkit-text-shadow: 1px 1px 1px black;
-  text-shadow: 1px 1px 1px black;
-}
-
 
