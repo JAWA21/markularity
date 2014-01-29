@@ -1,13 +1,43 @@
+<?php
+$btn_options = array(
+	'label' => 'Edit Bookmark',
+	'div' => 'form-group',
+	'class' => 'btn btn-lg btn-primary btn-block'
+);
+?>
+
+<div class="actions centered">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul class='btn nav nav-stacked bullets'>
+		<li>
+			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index'), array('class' => 'btn btn-primary btn-block')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view'), array('class' => 'btn btn-primary btn-block')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add'), array('class' => 'btn btn-primary btn-block')); ?>
+		</li>
+	</ul>
+</div>
+
+
 <div class="bookmarks form">
+	<div class="form-signin">
 
 <?php echo $this->Form->create('Bookmark'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Bookmark'); ?></legend>
-	<?php
-		echo $this->Form->input('title');
-		echo $this->Form->input('url');
+		<legend><?php echo __('Edit Bookmark'); ?></legend>
+	
+		<div class="form-group">
+			<?php echo $this->Form->input('title', array('label' => 'Title', 'id' => 'title','class'=>'form-control','autofocus'=>'autofocus')); ?>
+		</div>
+		<div class="form-group">
+			<?php echo $this->Form->input('url', array('label' => 'Url', 'id' => 'url','class'=>'form-control')); ?>
+		</div>
 
-		echo $this->Form->input('category', array(
+		<div class="btn-group">
+		<?php echo $this->Form->input('category', array(
 			'type' => 'select',
 			'options' => array(
 				'Sports' => 'Sports',
@@ -51,21 +81,5 @@
 			));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Edit Bookmark')); ?>
-</div>
-
-
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li>
-			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index')); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view')); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add')); ?>
-		</li>
-	</ul>
+<?php echo $this->Form->end(($btn_options)); ?>
 </div>

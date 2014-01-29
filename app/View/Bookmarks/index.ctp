@@ -54,17 +54,17 @@
 </div>
 
 
-<div class="actions">
+<div class="actions centered">
 	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+	<ul class='btn nav nav-stacked bullets'>
 		<li>
-			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Top 10'), array('action' => 'index'), array('class' => 'btn btn-primary btn-block')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view')); ?>
+			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view'), array('class' => 'btn btn-primary btn-block')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Add Bookmark'), array('action' => 'add'), array('class' => 'btn btn-primary btn-block')); ?>
 		</li>
 	</ul>
 </div>

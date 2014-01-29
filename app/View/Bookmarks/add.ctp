@@ -1,6 +1,6 @@
 <?php
 $btn_options = array(
-	'label' => 'Edit Bookmark',
+	'label' => 'Add Bookmark',
 	'div' => 'form-group',
 	'class' => 'btn btn-lg btn-primary btn-block'
 );
@@ -10,7 +10,7 @@ $btn_options = array(
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul class='btn nav nav-stacked bullets'>
 		<li>
-			<?php echo $this->Html->link(__('Top 10',true), array('action' => 'index'), array('class' => 'btn btn-lg btn-primary btn-block')); ?>
+			<?php echo $this->Html->link(__('Top 10',true), array('action' => 'index'), array('class' => 'btn btn-primary btn-block')); ?>
 		</li>
 		<li>
 			<?php echo $this->Html->link(__('Your Bookmarks'), array('action' => 'view'), array('class' => 'btn btn-primary btn-block')); ?>
