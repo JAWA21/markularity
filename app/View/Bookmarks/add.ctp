@@ -68,7 +68,8 @@ $btn_options = array(
 		</div>
 
 		<?echo $this->Form->input('date_submitted', array(
-				'type' => 'hidden',
+				//'type' => 'hidden',
+				'disabled' => 'disabled',
 				'value' => $this->Time->format('%F %jS, %Y %h:%i %A', '2011-08-22 11:53:00'),
 			));
 

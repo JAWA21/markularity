@@ -19,6 +19,7 @@
 		<table>
 		<tr>
 			<th>Bookmarks</th>
+			<th>Category</th>
 			<th>Rank</th>
 		</tr>
 
@@ -31,6 +32,9 @@
 						array('controller' => 'Bookmarks', 'action' => 'clickThrough', $bookmark['Index']['bookmark_id'])
 					);
 				?>
+			</td>
+			<td>
+				<?php echo $bookmark['Index']['category']; ?>
 			</td>
 			<td>
 				<?php echo $bookmark['Index']['rank']; ?>
