@@ -1,7 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
 App::uses('ClickThrough', 'Model');
-App::uses('Thumbs', 'Model');
+App::uses('Thumb', 'Model');
 
 /**
  * Bookmarks Controller
@@ -27,23 +27,6 @@ class BookmarksController extends AppController {
  *	displays top 10 bookmarks
  * @return void
  */
-
-	public function beforeFilter() {
-
-    		parent::beforeFilter();
-
-    		if(!$this->Auth->loggedIn()) {
-
-    			$this->Auth->deny(array('action' => 'index'));
-
-    		}else {
-
-    			$this->Auth->allow('index');
-
-    		}
-    		
-	} //End beforeFilter()
-
 	public function index() {
 
 		//var_dump($this->Auth->User('user_id'));
@@ -225,7 +208,7 @@ class BookmarksController extends AppController {
 
 	public function thumbUp($bookmark_id) {
 
-		$this->loadModel('Thumbs');
+		$this->loadModel('Thumb');
 
 		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
 		$url =  $query['Bookmark']['url'];
@@ -243,16 +226,16 @@ class BookmarksController extends AppController {
 		);
 
 		//$this->Thumb->create();
-
-		//if($this->Thumb->save($thumbed)){
-			 $this->redirect(array('action' => 'index'));
+		$this->Thumb->save($thumbed);
+		//if(){
+			return $this->redirect(array('action' => 'index'));
 		//}
 
 	}//end thumbUp
 
-	public function thumbDown($bookmark_id) {
+		public function thumbDown($bookmark_id) {
 
-		$this->loadModel('Thumbs');
+		$this->loadModel('Thumb');
 
 		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
 		$url =  $query['Bookmark']['url'];
@@ -263,23 +246,18 @@ class BookmarksController extends AppController {
 			$user_id = $this->Auth->User('user_id');
 		}
 
-
-
 		$thumbed = array(
 			'bookmark_id' => $bookmark_id,
 			'thumbed_user_id' => $user_id,
-			'thumbed' => 0,
-			// 'thumbedAmount' => 
+			'thumbed' => 1,
 		);
 
 		//$this->Thumb->create();
-
-		//if($this->Thumb->save($thumbed)){
-			 $this->redirect(array('action' => 'index'));
+		$this->Thumb->save($thumbed);
+		//if(){
+			return $this->redirect(array('action' => 'index'));
 		//}
 
 	}//end thumbUp
-
-
 
 }
