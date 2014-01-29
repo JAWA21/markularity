@@ -34,7 +34,7 @@
 				<?php
 					echo $this->Html->link(
 						$bookmark['Index']['title'],
-						array('action' => 'clickThrough')
+						array('controller' => 'Bookmarks', 'action' => 'clickThrough', $bookmark['Index']['bookmark_id'])
 					);
 				?>
 			</td>
