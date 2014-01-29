@@ -1,6 +1,8 @@
 <?php
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 $title_for_layout = "Markularity";
+$username = $this->Session->read('username');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,18 +25,26 @@ $title_for_layout = "Markularity";
 		?>
 	</head>
 	<body>
-		
-	    <div class="container">
-	    	<br />
-	       <nav class="navbar navbar-default" role="navigation">
-				<a class="navbar-brand" href="/">Markularity</a>
-				<div class="navbar-form navbar-right" role="register">
-					<a href="/logout" class="btn btn-primary">Logout</a>
+
+		<div class="container">
+		<br>
+			<div class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Markularity</a>
 				</div>
-				<br>
-			</nav>
-	        
+				
+				<div class="collapse navbar-collapse">
+					<div class="form-group">
+						<button onClick='moveTo();' type="submit" class="btn btn-primary navbar-btn navbar-right">Log Out</button>
+						<script>function moveTo(){ location.href='/logout'; }</script>
+						
+						<p class="navbar-text">Welcome <a href="/bookmarks"><?= $username?></a></p>
+					</div>
+				</div>
+			</div>
+	       
 	        <div id="content-wrapper">
+	        	<br>
 	            <?php echo $this -> fetch('content'); ?>
 	        </div>
 	 

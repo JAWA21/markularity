@@ -16,6 +16,10 @@ class IndexController extends AppController{
     public function index() {
     	//$bookmarks = $this->Index->topTen();
 
+        if($this->Auth->login()){
+            $this->layout = 'admin';
+        }
+        
     	$this->set('bookmarks', $this->Index->topTen());
     }
 
