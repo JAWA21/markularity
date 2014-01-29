@@ -4,10 +4,15 @@ App::uses('Bookmark', 'Model');
 
 class ThumbsController extends AppController {
 
+
+	public function thumbUp() {
+
 	public function thumbUp($bookmark_id) {
 
 		$this->loadModel('Bookmark');
+	}
 
+	public function thumbDown() {
 		$query = $this->Bookmark->findByBookmarkId($bookmark_id);
 		$url =  $query['Bookmark']['url'];
 
@@ -16,6 +21,7 @@ class ThumbsController extends AppController {
 		if($this->Auth->loggedIn()) {
 			$user_id = $this->Auth->User('user_id');
 		}
+	}
 
 		$thumbed = array(
 			'bookmark_id' => $bookmark_id,
