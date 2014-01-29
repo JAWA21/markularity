@@ -66,7 +66,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'root',
+		'password' => 'FSaslClass',
 		'database' => 'markularity',
 		'prefix' => '',
 		//'encoding' => 'utf8',
