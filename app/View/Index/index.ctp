@@ -25,31 +25,28 @@
 			<table class="table">
 		<tr class="col-lg-5">
 			<th>Bookmarks</th>
-			<th>Visit</th>
-			<th>Vote</th>
+			<th>Rank</th>
 		</tr>
 
 		<?php foreach ($bookmarks as $bookmark): ?>
 		<tr>
 			<td>
-				<a href="#"> <!-- href="/Thumbs/clickThrough" -->
-					<?php echo $bookmark['Index']['title']; ?>
-				</a>
-			</td>
-			<td>
 				<?php
 					echo $this->Html->link(
-						'Visit',
+						$bookmark['Index']['title'],
 						array('action' => 'clickThrough')
 					);
 				?>
 			</td>
 			<td>
-
-				<a class="glyphicon glyphicon-thumbs-up" href="#"></a> <!--href="#/Thumbs/thumUp"-->
-				<a class="glyphicon glyphicon-thumbs-down" href="#"></a> <!--href="/Thumbs/thumDwn"-->
-				
+				<?php echo $bookmark['Index']['rank']; ?>
 			</td>
+			<!-- <td>
+
+				<a class="glyphicon glyphicon-thumbs-up" href="#"></a> 
+				<a class="glyphicon glyphicon-thumbs-down" href="#"></a> 
+				
+			</td> -->
 		</tr>
 		<?php endforeach; ?>
 	</table>
