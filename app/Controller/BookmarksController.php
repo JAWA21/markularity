@@ -217,7 +217,7 @@ class BookmarksController extends AppController {
 
 		$this->ClickThrough->save($clickThrough);
 
-		$this->redirect('http://www.' . $url);
+		$this->redirect('http://' . $url);
 		
 
 	}//end clickThrough
