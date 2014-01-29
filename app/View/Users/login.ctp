@@ -20,7 +20,6 @@ $options = array(
 		<div class="centered">
 			<h2>User Login</h2>
 			<?php echo '<small>Please enter your username and password</small><br>'; ?>
-			<?php echo '<small>Your username is the email address used when you registered.</small><br><br>'; ?>
 		</div>
 		<div class="form-group">
 			<?php echo $this->Form->input('username', array('label' => 'Username', 'id' => 'username','class'=>'form-control','autofocus'=>'autofocus')); ?>
