@@ -69,8 +69,7 @@ $btn_options = array(
 
 		<?echo $this->Form->input('date_submitted', array(
 				//'type' => 'hidden',
-				'disabled' => 'disabled',
-				'value' => $this->Time->format('%F %jS, %Y %h:%i %A'),
+				'value' => $this->Time->format('%F %jS, %Y %h:%i %A', time())
 			));
 
 		//once reg/log working, how to get the user_id from session
