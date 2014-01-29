@@ -33,22 +33,8 @@
 			</td>
 
 			<td>
-				<!-- <a href="/Thumbs/thumbUp" class="glyphicon glyphicon-thumbs-up"></a>
-				<a href="/Thumbs/thumbDown" class="glyphicon glyphicon-thumbs-down"></a> -->
-
-				<?php 
-					echo $this->Html->link(
-						'thumbs up',
-						array('controller' => 'Thumbs', 'action' => 'thumbUp', $bookmark['Bookmark']['bookmark_id'])
-					);
-				?>
-
-				<?php 
-					echo $this->Html->link(
-						'thumbs down',
-						array('controller' => 'Thumbs', 'action' => 'thumbDown', $bookmark['Bookmark']['bookmark_id'])
-					);
-				?>
+				<a href="/Thumbs/thumbUp/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-up"></a>
+				<a href="/Thumbs/thumbDown/<? echo $bookmark['Bookmark']['bookmark_id'];?>" class="glyphicon glyphicon-thumbs-down"></a>
 			</td>
 		</tr>
 		<?php endforeach; ?>
