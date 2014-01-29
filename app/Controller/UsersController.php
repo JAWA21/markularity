@@ -46,8 +46,6 @@ class UsersController extends AppController {
 	} //End view()
 
 	public function  add() {
-				//var_dump($this->request->data);
-
 
         		if ($this->request->is('post')) {
 
